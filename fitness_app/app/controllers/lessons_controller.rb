@@ -1,15 +1,11 @@
 class LessonsController < ApplicationController
 
   def index
+    @lessons = Lesson.all
   end
 
   def show
-  end
-
-  def new
-  end
-
-  def create
+    @lesson = Lesson.find(params[:id])
   end
 
 end
