@@ -5,38 +5,38 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-u1 = User.new(name:"Oli",role:"instructor", email: "oli@me.com")
+u1 = User.new(name:"Oli",role:"instructor", email: "oli@me.com", image: "http://lorempixel.com/100/100/animals")
 u1.password = 'password'
 u1.password_confirmation = 'password'
 u1.save!
-u2 = User.new(name:"Lauren",role:"instructor", email: "lauren@me.com")
+u2 = User.new(name:"Lauren",role:"instructor", email: "lauren@me.com", image: "http://lorempixel.com/100/100/animals")
 u2.password = 'password'
 u2.password_confirmation = 'password'
 u2.save!
-u3 = User.new(name:"Tolu",role:"instructor", email: "tolu@me.com")
+u3 = User.new(name:"Tolu",role:"instructor", email: "tolu@me.com", image: "http://lorempixel.com/100/100/animals")
 u3.password = 'password'
 u3.password_confirmation = 'password'
 u3.save!
-u4 = User.new(name:"Iain",role:"client", email: "iain@me.com")
+u4 = User.new(name:"Iain",role:"client", email: "iain@me.com", image: "http://lorempixel.com/100/100/animals")
 u4.password = 'password'
 u4.password_confirmation = 'password'
 u4.save!
-u5 = User.new(name:"Mark",role:"client", email: "mark@me.com")
+u5 = User.new(name:"Mark",role:"client", email: "mark@me.com", image: "http://lorempixel.com/100/100/animals")
 u5.password = 'password'
 u5.password_confirmation = 'password'
 u5.save!
-u6 = User.new(name:"James",role:"client", email: "james@me.com")
+u6 = User.new(name:"James",role:"client", email: "james@me.com", image: "http://lorempixel.com/100/100/animals")
 u6.password = 'password'
 u6.password_confirmation = 'password'
 u6.save!
-u7 = User.new(name:"Jack",role:"client", email: "jack@me.com")
+u7 = User.new(name:"Jack",role:"client", email: "jack@me.com", image: "http://lorempixel.com/100/100/animals")
 u7.password = 'password'
 u7.password_confirmation = 'password'
 u7.save!
 
-c1 = Category.create(name:"dance")
-c2 = Category.create(name:"sports")
-c3 = Category.create(name:"yoga")
+c1 = Category.create(name:"dance", image: "http://lorempixel.com/400/200/sports")
+c2 = Category.create(name:"sports", image: "http://lorempixel.com/400/200/sports")
+c3 = Category.create(name:"yoga", image: "http://lorempixel.com/400/200/sports")
 
 l1 = Lesson.create(title:"Intro to Yoga",description:"Typewriter Pitchfork leggings, slow-carb ennui twee seitan readymade lo-fi. Small batch Shoreditch next level, XOXO whatever bicycle rights semiotics Wes Anderson authentic vegan sustainable 8-bit. Hashtag lo-fi messenger bag kale chips, deep v blog artisan vegan Thundercats retro shabby chic occupy fashion axe American Apparel before they sold out. Intelligentsia shabby chic cornhole Truffaut, stumptown freegan heirloom. Lo-fi shabby chic locavore, fingerstache tattooed umami jean shorts iPhone Carles Vice biodiesel. Hoodie Etsy polaroid, organic Marfa Wes Anderson try-hard hella VHS wolf pork belly mlkshk tattooed. PBR +1 drinking vinegar Brooklyn.",category_id: c3.id, instructor_id: u2.id)
 
