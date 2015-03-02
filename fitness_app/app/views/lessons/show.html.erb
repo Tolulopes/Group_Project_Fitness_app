@@ -1,1 +1,9 @@
 <h2>I am the show.html.erb file for lessons</h2>
+
+<p>Lesson title: <%= @lesson.title %></p>
+<p>Description: <%= @lesson.description %></p>
+<p>Instructor: <%= @lesson.instructor.name %></p>
+<p>Capacity: <%= @lesson.capacity %></p>
+<% if @lesson.capacity %>
+  <p>Availability: <%= @lesson.capacity-@lesson.bookings.length %></p>
+<% end %>
