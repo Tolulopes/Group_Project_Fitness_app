@@ -7,23 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav>
+<div id="list">
+<li><%= link_to "Home", root_path %></li>
+<li><%= link_to "Categories", lessons_path %></li>
+<li><%= link_to "Instructors", users_path %></li>
+</div>
   <!-- flash message required by devise gem -->
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <h1>Fit for the Queen</h1>
 
-  <div class='login'>
-    <% if current_user %>
-      <%= current_user.email %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign In", new_user_session_path %>
-      <%= link_to "Register", new_user_registration_path %>
-    <% end %>
-  </div>
 
+</nav>
+<div class='login'>
+  <% if current_user %>
+    <%= current_user.email %>
+    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Register", new_user_registration_path %>
+  <% end %>
+</div>
+<h1>Fit for the Queen</h1>
 <%= yield %>
 
 </body>
