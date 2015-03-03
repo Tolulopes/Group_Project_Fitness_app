@@ -9,12 +9,12 @@
       <li id="lesson-availability" data-avail="<%= @lesson.capacity-@lesson.bookings.length %>">Availability: <%= @lesson.capacity-@lesson.bookings.length %></li>
     <% end %>
     <% if current_user %>
-        <% if @user.bookings.where(lesson_id: @lesson.id) != [] %>
-          <li>Registration status: <%= @user.bookings.where(lesson_id: @lesson.id).first.status %></li>
+        <% if @no_booking == false %>
+          <li>Registration status: <%= @status %></li>
         <% end %>
       </ul>
-      
+      <% if @no_booking %>
         <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
-      
+      <% end %>
     <% end %>
 </div>
