@@ -8,4 +8,6 @@
     <p>Availability: <%= @lesson.capacity-@lesson.bookings.length %></p>
   <% end %>
   <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
+
+
 </div>
