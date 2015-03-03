@@ -26,6 +26,13 @@
   <%= f.file_field :image %>
   </div>
 
+  <div class="role">
+  <%= f.radio_button(:role, 'instructor') %>
+  <%= f.label (:instructor) %>
+  <%= f.radio_button(:role, 'client') %>
+  <%= f.label (:client) %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
