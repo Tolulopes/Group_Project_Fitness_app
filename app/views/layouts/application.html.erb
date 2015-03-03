@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fit for the Queen</title>
-  <%= stylesheet_link_tag    'application' %>
+  <%= yield :body || "<body>" %>
+  <title>GetFit</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-
+      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -20,16 +27,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">GetFit</a>
+        <a class="navbar-brand" href="#">GetFit</a>
       </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-
           <li><%= link_to "Categories", categories_path %></li>
-          <li><%= link_to "Instructors", users_path %></li>
           <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Instructors", users_path %></li>
           <li><%= link_to "Lessons", lessons_path %></li>
-
         </ul>
       </li>
     </ul>
@@ -41,7 +48,7 @@
     </form>
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
-
+      <li><%= current_user.email %></li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       <% else %>
       <li><%= link_to "Sign In", new_user_session_path %></li>
@@ -53,8 +60,12 @@
 </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+
+<h1>GetFit</h1>
+
 <%= yield %>
 
 </body>
