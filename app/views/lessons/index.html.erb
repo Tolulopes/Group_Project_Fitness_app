@@ -1,0 +1,6 @@
+<h2>I am the index.html.erb file for lessons</h2>
+<%= link_to 'NEW Lesson', new_lesson_path %>
+
+<% @lessons.each do |lesson| %>
+  <p><%= link_to lesson.title, lesson_path(lesson) %></p>
+<% end %>
