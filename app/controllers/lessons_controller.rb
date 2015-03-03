@@ -14,6 +14,7 @@ class LessonsController < ApplicationController
     else
       @status = @booking.first.status
     end
+    @space_left = @lesson.capacity-@lesson.bookings.length
   end
 
   def new
