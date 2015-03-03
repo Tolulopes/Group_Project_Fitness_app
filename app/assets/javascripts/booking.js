@@ -10,10 +10,15 @@ function request(method, url, data){
 };
 
 function createBooking(lesson, user, stat){
-  console.log(lesson, user, stat);
 
   request("POST", "/bookings", {booking:{lesson_id: lesson, user_id: user, status: stat}}).done(function(data){
-    console.log("updated bookings table");
+    console.log("updated booking table, ", "lesson id: ", lesson, "user id: ", user, stat);
+    $("#apply-to-join").hide();
+    var variable = $("#lesson-availability").data("avail");
+    console.log(variable);
+    // $("#lesson-availability").replaceWith("<li>Availability:" + variable + "</li>");
+
+    // console.log($("#lesson-availability").data("lesson-id"));
   });
 };
 
@@ -24,11 +29,8 @@ $(document).ready(function(){
     var user = $('#apply-to-join').data('user');
     var stat = "pending";
 
-    // debugger
-
     createBooking(lesson.toString(), user.toString(), stat);
-    
-    // console.log($('#apply-to-join').data('id'));
-    // console.log($('#apply-to-join').data('user'));
+
   });
+
 });
