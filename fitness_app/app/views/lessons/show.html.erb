@@ -1,11 +1,11 @@
 <h2>I am the show.html.erb file for lessons</h2>
 <div class="lesson-view-container">
-  <p>Lesson title: <%= @lesson.title %></p>
-  <p>Description: <%= @lesson.description %></p>
-  <p>Instructor: <%= @lesson.instructor.name %></p>
+  <div id="lesson-title" data-id="<%= @lesson.id %>">Lesson title: <%= @lesson.title %></div><br>
+  <div>Description: <%= @lesson.description %></div><br>
+  <div>Instructor: <%= @lesson.instructor.name %></div><br>
   <p>Capacity: <%= @lesson.capacity %></p>
   <% if @lesson.capacity %>
     <p>Availability: <%= @lesson.capacity-@lesson.bookings.length %></p>
   <% end %>
-  <button>Apply to join now</button>
+  <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
 </div>
