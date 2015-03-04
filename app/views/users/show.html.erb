@@ -18,8 +18,8 @@
   <p><h5><%= link_to "Edit lesson info", "/lessons/#{lesson.id}/edit"  %></h5></p>
   <!-- if instructor logged in and viewing their own show page display bookings -->
   <% if current_user && current_user == @user %>
-    <% lesson.bookings.each do |booking| %>
-      <p><%= booking.user.name %>, <button id="confirm-booking" data-id="<%= lesson.id %>" data-user="<%= @user.id %>"><%= booking.status %></button></p>
+    <% lesson.bookings.each_with_index do |booking, index| %>
+      <p><%= booking.user.name %>, <button class="confirm-booking" data-id="<%= booking.lesson.id %>" data-user="<%= booking.user.id %>"><%= booking.status %>,<%= booking.lesson.id %>,<%= booking.user.id %></button></p>
     <% end %>
   <% end %>
 <% end %>
