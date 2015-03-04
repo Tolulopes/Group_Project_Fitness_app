@@ -6,15 +6,15 @@
     <li>Instructor: <%= @lesson.instructor.name %></li>
     <li>Capacity: <%= @lesson.capacity %></li>
     <% if @lesson.capacity %>
-      <li id="lesson-availability" data-avail="<%= @lesson.capacity-@lesson.bookings.length %>">Availability: <%= @lesson.capacity-@lesson.bookings.length %></li>
+      <li id="lesson-availability" data-avail="<%= @spaces_left %>">Available space left: <%= @spaces_left %></li>
     <% end %>
     <% if current_user %>
-        <% if @user.bookings.where(lesson_id: @lesson.id) != [] %>
-          <li>Registration status: <%= @user.bookings.where(lesson_id: @lesson.id).first.status %></li>
+        <% unless @booking.empty? %>
+          <li>Registration status: <%= @status %></li>
         <% end %>
       </ul>
-      
+      <% if @booking.empty? && @lesson_has_space%>
         <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
-      
+      <% end %>
     <% end %>
 </div>

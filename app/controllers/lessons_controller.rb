@@ -8,6 +8,16 @@ class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])
     @user = current_user
+    @booking = @user.bookings.where(lesson_id: @lesson.id)
+    if @booking.empty?
+      @spaces_left = @lesson.capacity
+    else
+      @status = @booking.first.status
+      @spaces_left = @lesson.capacity-@lesson.bookings.length
+    end
+    if @spaces_left.nil? == false && @spaces_left > 0
+      @lesson_has_space = true
+    end
   end
 
   def new
