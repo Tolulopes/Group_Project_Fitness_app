@@ -15,6 +15,7 @@
 <!-- if viewing an instructor page, show all the lessons they teach -->
 <% @lessons_as_instructor.each do |lesson| %>
   <p><h4><%= link_to lesson.title, "/lessons/#{lesson.id}"  %></h4></p>
+  <p><h5><%= link_to "Edit lesson info", "/lessons/#{lesson.id}/edit"  %></h5></p>
   <!-- if instructor logged in and viewing their own show page display bookings -->
   <% if current_user && current_user == @user %>
     <% lesson.bookings.each do |booking| %>
