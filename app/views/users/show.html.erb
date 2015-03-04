@@ -1,34 +1,30 @@
-<h2>I am the show.html.erb file for instructor</h2>
-
-<div class="instructor-container">
-  <div class="instructor-name">
-    <h1><%= @user.name  %></h1>
+<div class="user-container">
+  <div class="user-name">
+    <h3><%= @user.name %></h3>  
   </div>
 
-  <div class="instructor-image">
+  <div class="user-image">
     <%= image_tag @user.image %>
   </div>
 
-  <div class="instructor-content">
+  <div class="user-content">
     <p><%= @user.biography %></p>
   </div>
-  <% @lessons.each do |lesson|%>
-    <% if lesson.instructor.id == @user.id %>
-      <%= lesson.title %>
-    <% end %>
-  <% end %>
 </div>
 
-<% if current_user && current_user.id == @user.id %>
-  <% if current_user.role == 'instructor' %>
-    <div class = "instructor-bookings">
-      <p>booking for individual instructor go here</p>
-    </div>
-  <% else %>
-    <div>
-      <% @user.lessons do |lesson|%>
-          <%= lesson.title %>
-      <% end %>
-    </div>
+<!-- if viewing an instructor page, show all the lessons they teach -->
+<% @lessons_as_instructor.each do |lesson| %>
+  <p><h4><%= link_to lesson.title, "/lessons/#{lesson.id}"  %></h4></p>
+  <!-- if instructor logged in and viewing their own show page display bookings -->
+  <% if current_user && current_user == @user %>
+    <% lesson.bookings.each do |booking| %>
+      <p><%= booking.user.name %>, <button id="confirm-booking" data-id="<%= lesson.id %>" data-user="<%= @user.id %>"><%= booking.status %></button></p>
+    <% end %>
   <% end %>
+<% end %>
+
+<!-- if viewing your own user page, show all the classes you have booked -->
+<h4>You are booked for the following courses:</h4>
+<% @bookings_as_client.each do |booking| %>
+  <p><%= link_to booking.lesson.title, "/lessons/#{booking.lesson.id}" %> Status: <%= booking.status %></p>
 <% end %>
