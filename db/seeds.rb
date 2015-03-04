@@ -77,11 +77,11 @@ u7.password = 'password'
 u7.password_confirmation = 'password'
 u7.save!
 
-c1 = Category.create(name:"Dance", image: "http://lorempixel.com/400/200/sports")
-c2 = Category.create(name:"Urban", image: "http://lorempixel.com/400/200/sports")
-c3 = Category.create(name:"Holistic Treatment", image: "http://lorempixel.com/400/200/sports")
-c4 = Category.create(name:"Functional Training", image: "http://lorempixel.com/400/200/sports")
-c5 = Category.create(name:"Drill Seargant", image: "http://lorempixel.com/400/200/sports")
+c1 = Category.create(name:"Dance",description:"")
+c2 = Category.create(name:"Urban",description:"")
+c3 = Category.create(name:"Holistic Treatment",description:"")
+c4 = Category.create(name:"Sweat Drench",description:"")
+c5 = Category.create(name:"Drill Seargant",description:"")
 
 
 l1 = Lesson.create(title:"Intro to Yoga",description:"Typewriter Pitchfork leggings, slow-carb ennui twee seitan readymade lo-fi. Small batch Shoreditch next level, XOXO whatever bicycle rights semiotics Wes Anderson authentic vegan sustainable 8-bit. Hashtag lo-fi messenger bag kale chips, deep v blog artisan vegan Thundercats retro shabby chic occupy fashion axe American Apparel before they sold out. Intelligentsia shabby chic cornhole Truffaut, stumptown freegan heirloom. Lo-fi shabby chic locavore, fingerstache tattooed umami jean shorts iPhone Carles Vice biodiesel. Hoodie Etsy polaroid, organic Marfa Wes Anderson try-hard hella VHS wolf pork belly mlkshk tattooed. PBR +1 drinking vinegar Brooklyn.",category_id: c3.id, instructor_id: u2.id)
@@ -90,8 +90,11 @@ l1 = Lesson.create(title:"Intro to Yoga",description:"Typewriter Pitchfork leggi
 
     l3 = Lesson.create(title:"poledancing 101",description: "Cray locavore Tumblr, typewriter hashtag tofu vegan flannel sartorial freegan. VHS viral next level gentrify. Cray gluten-free hella, master cleanse Schlitz ennui skateboard meggings occupy. Marfa dreamcatcher Truffaut, artisan kitsch try-hard retro 90's lumbersexual. Shabby chic kitsch cronut iPhone YOLO cliche. Cronut cardigan yr plaid. Four dollar toast shabby chic kale chips, McSweeney's migas flexitarian cronut locavore brunch +1.",category_id: c1.id, instructor_id: u3.id)
 
-    l4 = Lesson.create(title:"squash coaching", description: "Listicle cliche cardigan tattooed, yr McSweeney's occupy Godard kogi bicycle rights four dollar toast ugh. Portland viral mlkshk Truffaut. Normcore 3 wolf moon pickled, Austin Williamsburg Banksy pork belly mixtape twee. Bitters Banksy selvage dreamcatcher. Trust fund chia retro, letterpress you probably haven't heard of them skateboard distillery Banksy Blue Bottle craft beer meggings seitan pork belly cred. Chia pickled High Life authentic, aesthetic meditation health goth direct trade Brooklyn. Master cleanse VHS messenger bag vegan, synth tattooed deep v fap Blue Bottle photo booth Banksy bitters ugh.",category_id: c2.id, instructor_id: u1.id)
+    l4 = Lesson.create(title:"squash coaching", description: "Listicle cliche cardigan tattooed, yr McSweeney's occupy Godard kogi bicycle rights four dollar toast ugh. Portland viral mlkshk Truffaut. Normcore 3 wolf moon pickled, Austin Williamsburg Banksy pork belly mixtape twee. Bitters Banksy selvage dreamcatcher. Trust fund chia retro, letterpress you probably haven't heard of them skateboard distillery Banksy Blue Bottle craft beer meggings seitan pork belly cred. Chia pickled High Life authentic, aesthetic meditation health goth direct trade Brooklyn. Master cleanse VHS messenger bag vegan, synth tattooed deep v fap Blue Bottle photo booth Banksy bitters ugh.",category_id: c4.id, instructor_id: u1.id)
 
+    l5 = Lesson.create(title:"squash coaching", description: "Listicle cliche cardigan tattooed, yr McSweeney's occupy Godard kogi bicycle rights four dollar toast ugh. Portland viral mlkshk Truffaut. Normcore 3 wolf moon pickled, Austin Williamsburg Banksy pork belly mixtape twee. Bitters Banksy selvage dreamcatcher. Trust fund chia retro, letterpress you probably haven't heard of them skateboard distillery Banksy Blue Bottle craft beer meggings seitan pork belly cred. Chia pickled High Life authentic, aesthetic meditation health goth direct trade Brooklyn. Master cleanse VHS messenger bag vegan, synth tattooed deep v fap Blue Bottle photo booth Banksy bitters ugh.",category_id: c2.id, instructor_id: u21.id)
+
+    l6 = Lesson.create(title:"squash coaching", description: "Listicle cliche cardigan tattooed, yr McSweeney's occupy Godard kogi bicycle rights four dollar toast ugh. Portland viral mlkshk Truffaut. Normcore 3 wolf moon pickled, Austin Williamsburg Banksy pork belly mixtape twee. Bitters Banksy selvage dreamcatcher. Trust fund chia retro, letterpress you probably haven't heard of them skateboard distillery Banksy Blue Bottle craft beer meggings seitan pork belly cred. Chia pickled High Life authentic, aesthetic meditation health goth direct trade Brooklyn. Master cleanse VHS messenger bag vegan, synth tattooed deep v fap Blue Bottle photo booth Banksy bitters ugh.",category_id: c2.id, instructor_id: u22.id)
 
 
   r1 = Review.create(user_id: u4.id, lesson_id: l3.id, rating: 5, comment: "Loved it!")
