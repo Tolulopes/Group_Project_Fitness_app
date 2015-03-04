@@ -1,7 +1,6 @@
 class LessonsController < ApplicationController
 
   def index
-    # @lessons = Lesson.all
     @q = Lesson.ransack(params[:q])
     @lessons = @q.result(distinct: true)
   end
