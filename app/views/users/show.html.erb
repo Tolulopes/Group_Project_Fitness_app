@@ -1,1 +1,21 @@
-<h2>I am the show.html.erb file for users</h2>
+<h2>I am the show.html.erb file for instructor</h2>
+
+<p>standard info!</p>
+
+<% if current_user.id = @user.id %>
+  <% if current_user.role == 'instructor' %>
+    <div>
+      <% @lessons.each do |lesson|%>
+        <% if lesson.instructor.id == @user.id %>
+          <%= lesson.title %>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <% @user.lessons do |lesson|%>
+          <%= lesson.title %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
