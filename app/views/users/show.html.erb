@@ -26,5 +26,5 @@
 <!-- if viewing your own user page, show all the classes you have booked -->
 <h4>You are booked for the following courses:</h4>
 <% @bookings_as_client.each do |booking| %>
-  <p><%= booking.lesson.title %>, Status: <%= booking.status %></p>
+  <p><%= link_to booking.lesson.title, "/lessons/#{booking.lesson.id}" %> Status: <%= booking.status %></p>
 <% end %>
