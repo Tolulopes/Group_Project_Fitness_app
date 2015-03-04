@@ -5,38 +5,84 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-u1 = User.new(name:"Oli",role:"instructor", email: "oli@me.com", image: "http://lorempixel.com/100/100/animals")
+u1 = User.new(name:"Oli",role:"instructor",email:"oli@me.com", biography:"My specialty is maximum fat burn. In summer I run outdoor boot camps and personal sessions in the parks - helping people achieve a slimmer waist and toned tummy is the most rewarding feeling.
+
+Fitness is a journey and with my help I guarantee a happier and fitter you. Sessions will vary daily and will always ensure you unlock your full potential.
+
+My passion has always been fitness, coming from a running background and taking part in two half marathons. Being the best me I could possibly be has always been my life's aim. Most people want the same, to be happier, slimmer and healthier. I want the best for everybody who trains with me.
+" )
 u1.password = 'password'
 u1.password_confirmation = 'password'
+u1.image = File.open(Rails.root + 'seed_images/oli.jpg')
 u1.save!
-u2 = User.new(name:"Lauren",role:"instructor", email: "lauren@me.com", image: "http://lorempixel.com/100/100/animals")
+
+u2 = User.new(name:"Lauren",role:"instructor", email: "lauren@me.com",biography:"Lauren is a focused and dedicated personal trainer who’s top priority is making sure her clients reach their fitness/physique and health goals.
+
+Lauren specialises in preparing individuals from all backgrounds and fitness levels who have potential to compete in fitness modelling competitions. Having gained enormous experience on stage she can successfully train individuals to improve their physiques, stage confidence and charisma and ability to naturally pose and much much more.")
 u2.password = 'password'
 u2.password_confirmation = 'password'
+u2.image = File.open(Rails.root + 'seed_images/lauren.jpg')
 u2.save!
-u3 = User.new(name:"Tolu",role:"instructor", email: "tolu@me.com", image: "http://lorempixel.com/100/100/animals")
+
+u3 = User.new(name:"Tolu",role:"instructor", email: "tolu@me.com", biography: "As an ardent dancer, Tolu has performed in a number of London shows, summer music festivals and the Rio de Janeiro Carnival. Tolu also plays forward in the Women's London Tigers Basketball Team and practices as a qualified coach.
+
+With this varied physical experience, Tolu is able to offer training sessions with a wide spectrum of techniques that apply the body to a range of movements and challenges to achieve optimum results. She dedicates her time to tailoring sessions to suit individual needs and aspirations. ")
 u3.password = 'password'
 u3.password_confirmation = 'password'
+u3.image = File.open(Rails.root + 'seed_images/tolu.jpg')
 u3.save!
-u4 = User.new(name:"Iain",role:"client", email: "iain@me.com", image: "http://lorempixel.com/100/100/animals")
+
+u20 = User.new(name:"Natalie",role:"instructor",email:"natalie@me.com", biography:"Coming from a Athletic background in sprinting, Natalie has always been passionate about the world of fitness. After studying to become a Personal Trainer, Natalie decided to advance her knowledge with specialist Strength Coaching qualifications and Nutritional courses.
+
+Natalie specialises in fat loss and building lean muscle - this is the art of improving body composition, which Natalie has fine tuned with her years of experience to get her clients the fastest possible results and the best physical transformations." )
+u20.password = 'password'
+u20.password_confirmation = 'password'
+u20.image = File.open(Rails.root + 'seed_images/natalie.jpg')
+u20.save!
+
+u21 = User.new(name:"Tobias",role:"instructor",email:"tobias@me.com", biography:"Fitness isn’t his job. It’s his vocation. Tobias has always had a deep desire to improve himself, but now he finds he gets more satisfaction from helping others.
+
+Tobia is a highly motivated and friendly Personal Trainer with extensive experience in and around gyms. He is fully prepared to evaluate client’s physical fitness, understand their needs and then develop a practical and achievable routine for them to reach their targets. He works in close partnership with his clients. Getting the right nutritional plan and advice is the key to physical and mental improvement, and that is what Tobias delivers." )
+u21.password = 'password'
+u21.password_confirmation = 'password'
+u21.image = File.open(Rails.root + 'seed_images/tobias.jpg')
+u21.save!
+
+u22 = User.new(name:"Vinisha",role:"instructor",email:"natalie@me.com", biography:"Coming from a Athletic background in sprinting, Natalie has always been passionate about the world of fitness. After studying to become a Personal Trainer, Natalie decided to advance her knowledge with specialist Strength Coaching qualifications and Nutritional courses.
+
+Natalie specialises in fat loss and building lean muscle - this is the art of improving body composition, which Natalie has fine tuned with her years of experience to get her clients the fastest possible results and the best physical transformations.
+" )
+u22.password = 'password'
+u22.password_confirmation = 'password'
+u22.image = File.open(Rails.root + 'seed_images/vinisha.jpg')
+u22.save!
+
+u4 = User.new(name:"Iain",role:"client", email: "iain@me.com")
 u4.password = 'password'
 u4.password_confirmation = 'password'
 u4.save!
-u5 = User.new(name:"Mark",role:"client", email: "mark@me.com", image: "http://lorempixel.com/100/100/animals")
+
+u5 = User.new(name:"Mark",role:"client", email: "mark@me.com")
 u5.password = 'password'
 u5.password_confirmation = 'password'
 u5.save!
-u6 = User.new(name:"James",role:"client", email: "james@me.com", image: "http://lorempixel.com/100/100/animals")
+
+u6 = User.new(name:"James",role:"client", email: "james@me.com")
 u6.password = 'password'
 u6.password_confirmation = 'password'
 u6.save!
-u7 = User.new(name:"Jack",role:"client", email: "jack@me.com", image: "http://lorempixel.com/100/100/animals")
+
+u7 = User.new(name:"Jack",role:"client", email: "jack@me.com")
 u7.password = 'password'
 u7.password_confirmation = 'password'
 u7.save!
 
-c1 = Category.create(name:"dance", image: "http://lorempixel.com/400/200/sports")
-c2 = Category.create(name:"sports", image: "http://lorempixel.com/400/200/sports")
-c3 = Category.create(name:"yoga", image: "http://lorempixel.com/400/200/sports")
+c1 = Category.create(name:"Dance", image: "http://lorempixel.com/400/200/sports")
+c2 = Category.create(name:"Urban", image: "http://lorempixel.com/400/200/sports")
+c3 = Category.create(name:"Holistic Treatment", image: "http://lorempixel.com/400/200/sports")
+c4 = Category.create(name:"Functional Training", image: "http://lorempixel.com/400/200/sports")
+c5 = Category.create(name:"Drill Seargant", image: "http://lorempixel.com/400/200/sports")
+
 
 l1 = Lesson.create(title:"Intro to Yoga",description:"Typewriter Pitchfork leggings, slow-carb ennui twee seitan readymade lo-fi. Small batch Shoreditch next level, XOXO whatever bicycle rights semiotics Wes Anderson authentic vegan sustainable 8-bit. Hashtag lo-fi messenger bag kale chips, deep v blog artisan vegan Thundercats retro shabby chic occupy fashion axe American Apparel before they sold out. Intelligentsia shabby chic cornhole Truffaut, stumptown freegan heirloom. Lo-fi shabby chic locavore, fingerstache tattooed umami jean shorts iPhone Carles Vice biodiesel. Hoodie Etsy polaroid, organic Marfa Wes Anderson try-hard hella VHS wolf pork belly mlkshk tattooed. PBR +1 drinking vinegar Brooklyn.",category_id: c3.id, instructor_id: u2.id)
 
@@ -46,6 +92,8 @@ l1 = Lesson.create(title:"Intro to Yoga",description:"Typewriter Pitchfork leggi
 
     l4 = Lesson.create(title:"squash coaching", description: "Listicle cliche cardigan tattooed, yr McSweeney's occupy Godard kogi bicycle rights four dollar toast ugh. Portland viral mlkshk Truffaut. Normcore 3 wolf moon pickled, Austin Williamsburg Banksy pork belly mixtape twee. Bitters Banksy selvage dreamcatcher. Trust fund chia retro, letterpress you probably haven't heard of them skateboard distillery Banksy Blue Bottle craft beer meggings seitan pork belly cred. Chia pickled High Life authentic, aesthetic meditation health goth direct trade Brooklyn. Master cleanse VHS messenger bag vegan, synth tattooed deep v fap Blue Bottle photo booth Banksy bitters ugh.",category_id: c2.id, instructor_id: u1.id)
 
+
+
   r1 = Review.create(user_id: u4.id, lesson_id: l3.id, rating: 5, comment: "Loved it!")
 
   r2 = Review.create(user_id: u5.id, lesson_id: l3.id, rating: 5, comment: "really fun!")
@@ -54,10 +102,10 @@ l1 = Lesson.create(title:"Intro to Yoga",description:"Typewriter Pitchfork leggi
 
   r4 = Review.create(user_id: u7.id, lesson_id: l1.id, rating: 4, comment: "Really relaxing and spiritual")
 
-  b1 = Booking.create(user_id:u4.id,lesson_id:l3.id)
-  b2 = Booking.create(user_id:u5.id,lesson_id:l3.id)
-  b3 = Booking.create(user_id:u6.id,lesson_id:l2.id)
-  b4 = Booking.create(user_id:u7.id,lesson_id:l1.id)
+  b1 = Booking.create(user_id:u4.id,lesson_id:l3.id, status: 'attended')
+  b2 = Booking.create(user_id:u5.id,lesson_id:l3.id, status: 'attended')
+  b3 = Booking.create(user_id:u6.id,lesson_id:l2.id, status: 'attended')
+  b4 = Booking.create(user_id:u7.id,lesson_id:l1.id, status: 'attended')
 
 
 
