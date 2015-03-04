@@ -10,18 +10,19 @@
   </div>
 
   <div class="instructor-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas mollitia aut deserunt dolorum consectetur autem corporis quos totam quisquam fugit commodi sunt adipisci non, tempora tenetur dignissimos molestias, possimus necessitatibus.</p>
+    <p><%= @user.biography %></p>
   </div>
+  <% @lessons.each do |lesson|%>
+    <% if lesson.instructor.id == @user.id %>
+      <%= lesson.title %>
+    <% end %>
+  <% end %>
 </div>
 
-<% if current_user.id == @user.id %>
+<% if current_user && current_user.id == @user.id %>
   <% if current_user.role == 'instructor' %>
-    <div>
-      <% @lessons.each do |lesson|%>
-        <% if lesson.instructor.id == @user.id %>
-          <%= lesson.title %>
-        <% end %>
-      <% end %>
+    <div class = "instructor-bookings">
+      <p>booking for individual instructor go here</p>
     </div>
   <% else %>
     <div>

@@ -15,7 +15,7 @@ function createBooking(lesson, user, stat){
     console.log("updated booking table, ", "lesson id: ", lesson, "user id: ", user, stat);
     $("#apply-to-join").hide();
     var newAvailbility = $("#lesson-availability").data("avail") - 1 ;
-    console.log(variable);
+    // console.log(variable);
     $("#lesson-availability").replaceWith("<li>Availability:" + newAvailability + "</li>");
 
     // console.log($("#lesson-availability").data("lesson-id"));
