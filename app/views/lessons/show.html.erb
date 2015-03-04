@@ -1,11 +1,20 @@
 <h2>I am the show.html.erb file for lessons</h2>
 <div class="lesson-view-container">
-  <div id="lesson-title" data-id="<%= @lesson.id %>">Lesson title: <%= @lesson.title %></div><br>
-  <div>Description: <%= @lesson.description %></div><br>
-  <div>Instructor: <%= @lesson.instructor.name %></div><br>
-  <p>Capacity: <%= @lesson.capacity %></p>
-  <% if @lesson.capacity %>
-    <p>Availability: <%= @lesson.capacity-@lesson.bookings.length %></p>
-  <% end %>
-  <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
+  <ul>
+    <li>Lesson title: <%= @lesson.title %></li>
+    <li>Description: <%= @lesson.description %></li>
+    <li>Instructor: <%= @lesson.instructor.name %></li>
+    <li>Capacity: <%= @lesson.capacity %></li>
+    <% if @lesson.capacity %>
+      <li id="lesson-availability" data-avail="<%= @space_left %>">Available space left: <%= @space_left %></li>
+    <% end %>
+    <% if current_user %>
+        <% if @no_booking == false %>
+          <li>Registration status: <%= @status %></li>
+        <% end %>
+      </ul>
+      <% if @no_booking %>
+        <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
+      <% end %>
+    <% end %>
 </div>

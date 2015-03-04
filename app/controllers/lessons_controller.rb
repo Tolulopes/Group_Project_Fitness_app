@@ -7,6 +7,14 @@ class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])
     @user = current_user
+    @booking = @user.bookings.where(lesson_id: @lesson.id)
+    @no_booking = @booking.empty?
+    if @no_booking
+      nil
+    else
+      @status = @booking.first.status
+    end
+    @space_left = @lesson.capacity-@lesson.bookings.length
   end
 
   def new
