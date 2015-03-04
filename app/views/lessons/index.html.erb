@@ -1,3 +1,11 @@
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :title_cont %>
+  <%= f.search_field :title_cont %>
+
+  <%= f.submit %>
+<% end %>
+
 <h2>I am the index.html.erb file for lessons</h2>
 
 <% if current_user.role == 'instructor'%>
