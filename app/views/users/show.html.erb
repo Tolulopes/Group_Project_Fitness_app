@@ -1,34 +1,23 @@
-<h2>I am the show.html.erb file for instructor</h2>
-
-<div class="instructor-container">
-  <div class="instructor-name">
-    <h1><%= @user.name  %></h1>
+<div class="user-container">
+  <div class="user-name">
+    <h3><%= @user.name %></h3>  
   </div>
 
-  <div class="instructor-image">
+  <div class="user-image">
     <%= image_tag @user.image %>
   </div>
 
-  <div class="instructor-content">
+  <div class="user-content">
     <p><%= @user.biography %></p>
   </div>
-  <% @lessons.each do |lesson|%>
-    <% if lesson.instructor.id == @user.id %>
-      <%= lesson.title %>
-    <% end %>
-  <% end %>
 </div>
 
-<% if current_user && current_user.id == @user.id %>
-  <% if current_user.role == 'instructor' %>
-    <div class = "instructor-bookings">
-      <p>booking for individual instructor go here</p>
-    </div>
-  <% else %>
-    <div>
-      <% @user.lessons do |lesson|%>
-          <%= lesson.title %>
-      <% end %>
-    </div>
+<% @lessons_as_instructor.each do |lesson| %>
+  <p><h4><%= lesson.title  %></h4></p>
+  <% if current_user && current_user == @user %>
+    <% lesson.bookings.each do |booking| %>
+      <p><%= booking.user.name %>, <button id="confirm-booking" data-id="<%= lesson.id %>" data-user="<%= @user.id %>"><%= booking.status %></button></p>
+
+    <% end %>
   <% end %>
 <% end %>
