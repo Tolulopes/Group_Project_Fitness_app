@@ -13,7 +13,7 @@ class LessonsController < ApplicationController
       @booking = @user.bookings.where(lesson_id: @lesson.id)
     end
 
-    if @booking.nil?
+    if @booking.nil? || @booking.empty?
       @spaces_left = @lesson.capacity
     else
       @status = @booking.first.status
