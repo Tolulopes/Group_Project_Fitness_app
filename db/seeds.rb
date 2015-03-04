@@ -77,12 +77,35 @@ u7.password = 'password'
 u7.password_confirmation = 'password'
 u7.save!
 
-c1 = Category.create(name:"Dance",description:"")
-c2 = Category.create(name:"Urban",description:"")
-c3 = Category.create(name:"Holistic Treatment",description:"")
-c4 = Category.create(name:"Sweat Drench",description:"")
-c5 = Category.create(name:"Drill Seargant",description:"")
+c1 = Category.create(name:"Dance",description:"Dance classes at GetFit are not about perfect technique (of lack there of, as the case may be). Dance is more about checking your inhibitions at the door and moving your frame to some great music.
 
+Dance will get you fit while learning new skills. You may be after a dancer's body or just want to prove to your work mates that you weren’t just a tad tiddly last friday night and you can in fact ‘stop and do the hammer time’, either way, Frame has got the dance classes for you.
+
+If you’re a bit nervous about throwing yourself straight into an open class, and want to master your technique before taking your Beyonce strut to the rest of the world.")
+
+c2 = Category.create(name:"Urban",description:"Want to see incredible results without having to spend your life at the gym?
+
+Our Urban Signature classes combine the best of all worlds, combining elements of everything on offer at GetFit to give you long, lean muscles and a rather smug feeling. The Urban Signature classes have been specially formulated to provide a selection of exciting and varied workouts which moves seamlessly through exercises.
+
+We totally understand the need for efficiency in our daily lives so the Urban Signature classes are all about results and packing as much into the hour you set aside as possible.")
+
+c3 = Category.create(name:"Holistic Treatment",description:"Yoga means union, united mind, body and spirit. Yoga as we know it in the West is in Sanskrit the asana part of yoga, meaning posture or pose. Yoga is breath-linked movements, so you move the body into asanas/poses with conscious breathing, resulting in a toned, flexible, lean body and a calm, level stress-free demeanor. Yoga has an array of benefits but can also be used as a tonic to things like stress, tight muscles, fatigue, insomnia, anxiousness and asthma.
+
+Why do yoga? The short answer is that Yoga will make you feel better! Practicing postures linked to breathing will make you healthier and happier. It allows you to tune into your body's needs (such as muscle tightness), tune out of all the busy, stressful things around you and get into shape, all at the same time! ")
+
+c4 = Category.create(name:"Insanity",description:"Forget everything you think you know about high-intensity
+workouts. Because INSANITY turns old-school interval training on its head.
+
+If you've ever been to a Spin class, you know how that works.You motor along at a moderate pace for awhile – then all at
+once, you kick up your speed and heart rate – just for a minute or so. After that, it's back to a lower gear, giving you
+plenty of time to catch your breath.
+
+But with INSANITY, you do exactly the opposite. You workflat out in 3 to 5-minute blocks, and take breaks only long
+enough to gulp some air and get right back to work. It's called Max Interval Training, because it keeps your body working at maximum capacity through your entire workout. You keep pushing your limits – so your body has to adapt. That's how you get in such insane shape in just 60 days.")
+
+c5 = Category.create(name: "Frame Fitness",description:"At Frame there is no such thing as a dull work out. All fitness classes are lead by original instructors who bring a generous helping of variety, music and attitude to keep you interested and motivated. Our fitness classes are designed to push you to your comfortable limit and keep you entertained and we promise to never make you burst into tears because you can’t hold a damn squat for 45 minutes!
+
+Frame’s QUICKIES are high intensity group training sessions designed to give you a fitness fix in just 30minutes. Whether , toning, strength or de-stressing you’re after, Frame’s quickies will achieve an ROI even your boss would be happy with.")
 
 l1 = Lesson.create(title:"Intro to Yoga",description:"Typewriter Pitchfork leggings, slow-carb ennui twee seitan readymade lo-fi. Small batch Shoreditch next level, XOXO whatever bicycle rights semiotics Wes Anderson authentic vegan sustainable 8-bit. Hashtag lo-fi messenger bag kale chips, deep v blog artisan vegan Thundercats retro shabby chic occupy fashion axe American Apparel before they sold out. Intelligentsia shabby chic cornhole Truffaut, stumptown freegan heirloom. Lo-fi shabby chic locavore, fingerstache tattooed umami jean shorts iPhone Carles Vice biodiesel. Hoodie Etsy polaroid, organic Marfa Wes Anderson try-hard hella VHS wolf pork belly mlkshk tattooed. PBR +1 drinking vinegar Brooklyn.",category_id: c3.id, instructor_id: u2.id)
 
