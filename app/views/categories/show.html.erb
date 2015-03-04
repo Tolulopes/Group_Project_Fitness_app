@@ -1,1 +1,11 @@
-<h2>I am the show.html.erb file for categories</h2>
+<h2><%= @category.name %></h2>
+
+<div class="lessons-container">
+  <% @category.lessons.each do |x| %>
+    <div class="lesson-box">
+      <h4> <%=x.title  %></h4>
+      <p>Instructor: <%=x.instructor.name  %> </p>
+      <%= link_to "more info", lesson_path(x) %>
+    </div>
+  <% end %>
+</div>
