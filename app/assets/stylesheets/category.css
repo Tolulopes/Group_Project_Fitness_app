@@ -17,3 +17,16 @@
 .carousel-inner{
   margin-top: 60px;
 }
+
+.category_description {
+  padding: 30px;
+  font-size: 15px;
+}
+
+.lesson-box{
+  color: rgb(117, 74, 117);
+}
+
+p{
+  font-family: helvetica;
+}
