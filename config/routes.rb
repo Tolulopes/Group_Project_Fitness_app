@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   resources :lessons
   resources :categories
   resources :bookings
-  
+  resources :reviews
+
+  get '/search', to: "search#index"
+
   root 'welcomes#index'
-  
+
   # root 'categories#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

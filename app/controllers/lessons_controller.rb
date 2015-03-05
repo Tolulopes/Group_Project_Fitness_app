@@ -1,12 +1,28 @@
 class LessonsController < ApplicationController
 
   def index
-    @lessons = Lesson.all
+    @q = Lesson.ransack(params[:q])
+    @lessons = @q.result(distinct: true)
   end
 
   def show
     @lesson = Lesson.find(params[:id])
     @user = current_user
+
+    unless @user.nil?
+      @booking = @user.bookings.where(lesson_id: @lesson.id)
+    end
+
+    if @booking.nil?
+      @spaces_left = @lesson.capacity
+    else
+      @status = @booking.first.status
+      @spaces_left = @lesson.capacity-@lesson.bookings.length
+    end
+    if @spaces_left.nil? == false && @spaces_left > 0
+      @lesson_has_space = true
+    end
+
   end
 
   def new
@@ -35,6 +51,6 @@ class LessonsController < ApplicationController
 
   private
   def lesson_params
-    params.require(:lesson).permit(:title, :description, :category_id, :capacity)
+    params.require(:lesson).permit(:title, :description, :category_id, :capacity, :start_time, :end_time, :date)
   end
 end

@@ -3,11 +3,15 @@ class Ability
 
     def initialize(user)
         user ||= User.new
-          if user.role? :admin
-            can :manage, :all
-          else
-            can :read, :all
+            if user.role? :admin
+                can :manage, :all
+            else
+                can :read, :all
+            end
+            
         end
+
+
     end
 
     # Define abilities for the passed in user here. For example:

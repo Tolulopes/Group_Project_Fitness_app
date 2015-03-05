@@ -1,5 +1,7 @@
-<h2>I am the index.html.erb file for users</h2>
+<h2>I am the index.html.erb file for instructors</h2>
 
 <% @users.each do |user| %>
-  <p><%= link_to user.name, user_path(user) %></p>
+  <% if user.role == 'instructor' %>
+    <p><%= link_to user.name, user_path(user) %></p>
+  <% end %>
 <% end %>

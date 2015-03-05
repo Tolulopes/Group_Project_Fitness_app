@@ -1,1 +1,35 @@
-<h2>I am the show.html.erb file for users</h2>
+<div class="user-container">
+  <div class="user-name">
+    <h3><%= @user.name %></h3>  
+  </div>
+
+  <div class="user-image">
+    <%= image_tag @user.image %>
+  </div>
+
+  <div class="user-content">
+    <p><%= @user.biography %></p>
+  </div>
+</div>
+
+<!-- if viewing an instructor page, show all the lessons they teach -->
+<% @lessons_as_instructor.each do |lesson| %>
+  <p><h4><%= link_to lesson.title, "/lessons/#{lesson.id}"  %></h4></p>
+  <p><h5><%= link_to "Edit lesson info", "/lessons/#{lesson.id}/edit"  %></h5></p>
+  <!-- if instructor logged in and viewing their own show page display bookings -->
+  <% if current_user && current_user == @user %>
+    <% lesson.bookings.each do |booking| %>
+      <p><%= booking.user.name %>, <button id="confirm-booking" data-id="<%= lesson.id %>" data-user="<%= @user.id %>"><%= booking.status %></button></p>
+    <% end %>
+  <% end %>
+<% end %>
+
+<!-- if viewing your own user page, show all the classes you have booked -->
+<h4>You are booked for the following courses:</h4>
+<% if @bookings_as_client.empty? %>
+  <p>You have not yet booked any lessons! Check out the options <%= link_to "HERE", "/lessons" %></p>
+<% else  %>
+  <% @bookings_as_client.each do |booking| %>
+    <p><%= link_to booking.lesson.title, "/lessons/#{booking.lesson.id}" %> Status: <%= booking.status %></p>
+  <% end %>
+<% end %>

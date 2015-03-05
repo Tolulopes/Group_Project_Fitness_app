@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302143235) do
+ActiveRecord::Schema.define(version: 20150304201021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 20150302143235) do
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "Description"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -39,6 +40,9 @@ ActiveRecord::Schema.define(version: 20150302143235) do
     t.integer  "instructor_id"
     t.integer  "capacity"
     t.integer  "category_id"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.date     "date"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -66,6 +70,7 @@ ActiveRecord::Schema.define(version: 20150302143235) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "image"
+    t.text     "biography"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

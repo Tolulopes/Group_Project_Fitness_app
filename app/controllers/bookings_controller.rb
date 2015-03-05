@@ -9,7 +9,6 @@ class BookingsController < ActionController::Base
   end
 
   def create
-    binding.pry
     puts :status
     puts :user_id
     @booking = Booking.create(booking_params)
