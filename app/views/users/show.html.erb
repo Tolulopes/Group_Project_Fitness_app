@@ -19,7 +19,7 @@
   <!-- if instructor logged in and viewing their own show page display bookings -->
   <% if current_user && current_user == @user %>
     <% lesson.bookings.each do |booking| %>
-      <p><%= booking.user.name %>, <button class="confirm-booking" data-lessonid="<%= booking.lesson.id %>" data-user="<%= booking.user.id %>" data-id="<%= booking.id  %>"><%= booking.status %>,<%= booking.lesson.id %>,<%= booking.user.id %></button></p>
+      <p><%= booking.user.name %>, <button class="confirm-booking" data-id="<%= booking.id %>"><%= booking.status %></button></p>
     <% end %>
   <% end %>
 <% end %>

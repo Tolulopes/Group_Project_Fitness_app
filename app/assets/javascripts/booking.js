@@ -20,13 +20,16 @@ function createBooking(lesson, user, stat){
   });
 };
 
-function changeBooking(lesson, user, stat, bookingId){
+function changeBooking(stat, bookingId, booking){
 
-  request("PUT", "/bookings/"+bookingId, {booking:{lesson_id: lesson, user_id: user, status: stat}}).done(function(data){
-    console.log("change booking table, ", "lesson id: ", lesson, "user id: ", user, stat, bookingId);
+  request("PUT", "/bookings/"+bookingId, {booking:{status: stat}}).done(function(data){
 
-    // $("#apply-to-join").hide();
-    // $("#lesson-view-ul").append("<li>Your registration status: pending</li>");
+    if(stat === "confirmed"){
+      $(booking).text("confirmed");
+    }else if(stat === "attended"){
+      $(booking).text("attended");
+      $(booking).prop('disabled', true);
+    };
 
   });
 };
@@ -46,12 +49,20 @@ $(document).ready(function(){
   $(".confirm-booking").on("click", function(e){
 
     $(this).each(function(index, booking){
-      var lesson = $(booking).data('lessonid');
-      var user = $(booking).data('user');
-      var stat = "confirmed";
-      var bookingId = $(booking).data('id');
-      
-      changeBooking(lesson.toString(), user.toString(), stat, bookingId);
+
+      if($(booking).text() === "pending"){
+
+        var stat = "confirmed";
+        var bookingId = $(booking).data('id');
+        changeBooking(stat, bookingId.toString(), booking);
+
+      }else if($(booking).text() === "confirmed"){
+
+        var stat = "attended";
+        var bookingId = $(booking).data('id');
+        changeBooking(stat, bookingId.toString(), booking);
+
+      };  
 
     });
   });
