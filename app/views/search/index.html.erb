@@ -1,22 +1,30 @@
-<h1>Lessons</h1>
+<h4>Lessons</h4>
 <% if @lessons.present? %>
   <% @lessons.each do |lesson| %>
-      <%= lesson.title %>
-    <% end %>
+        <%= lesson.title %>
   <% end %>
+<% else %>
+<h5>There are no lessons matching your search term.</h5>
+<% end %>
 
-<h1>Category</h1>
-
+<h4>Categories</h4>
 <% if @categories.present? %>
   <% @categories.each do |category| %>
-      <%= category.name %>
-    <% end %>
+        <%= category.title %>
   <% end %>
+<% else %>
+<h5>There are no categories matching your search term.</h5>
+<% end %>
 
-<h1>User</h1>
+<h4>Instructors</h4>
 <% if @users.present? %>
   <% @users.each do |user| %>
-      <%= user.name %>
+    <% if user.role == "instructor" %>
+        <%= user.name %>
+    <% else %>
+    <h5>There are no instructors matching your search term.</h5>
     <% end %>
   <% end %>
-
+<% else %>
+<h5>There are no instructors matching your search term.</h5>
+<% end %>

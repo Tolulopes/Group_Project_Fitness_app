@@ -14,7 +14,7 @@ def set_ransack_form_variables
     @users = User.search(name_cont: q).result
 end
 
-
+@categories = Category.all
 
   protected
 
