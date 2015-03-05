@@ -6,7 +6,8 @@ class UsersController < ApplicationController
     # @instructors = @users.where(role: "instructor")
     @q = User.ransack(params[:q])
     # binding.pry
-    @instructors = @q.result.includes(role: "instructor").to_a.uniq
+    @users = @q.result(distinct: true)
+
   end
 
   def show
