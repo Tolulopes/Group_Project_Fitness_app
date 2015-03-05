@@ -20,22 +20,16 @@ function createBooking(lesson, user, stat){
   });
 };
 
-function changeBooking(lesson, user, stat, bookingId, booking){
+function changeBooking(stat, bookingId, booking){
 
-  console.log("change booking table, ", "lesson id: ", lesson, "user id: ", user, stat, bookingId);
-  console.log("/bookings/"+bookingId);
+  request("PUT", "/bookings/"+bookingId, {booking:{status: stat}}).done(function(data){
 
-  request("PUT", "/bookings/"+bookingId, {booking:{lesson_id: lesson, user_id: user, status: stat}}).done(function(data){
-
-    console.log("booking created?", stat);
-    debugger;
-
-    // if stat === "confirmed"
-    //   then turn off button and make text "attended"
-
-
-    $(this).text("confirmed");
-    // $("#lesson-view-ul").append("<li>Your registration status: pending</li>");
+    if(stat === "confirmed"){
+      $(booking).text("confirmed");
+    }else if(stat === "attended"){
+      $(booking).text("attended");
+      $(booking).prop('disabled', true);
+    };
 
   });
 };
@@ -55,19 +49,20 @@ $(document).ready(function(){
   $(".confirm-booking").on("click", function(e){
 
     $(this).each(function(index, booking){
-      var lesson = $(booking).data('lessonid');
-      var user = $(booking).data('user');
-      var stat = "confirmed";
-      var bookingId = $(booking).data('id');
 
-      // if button text is pending?
-      //   do the above
+      if($(booking).text() === "pending"){
 
-      // else if the button text is confirmed?
-      //   status = attended
-      //   make request and in the done disable the button
-      
-      changeBooking(lesson.toString(), user.toString(), stat, bookingId.toString(), booking);
+        var stat = "confirmed";
+        var bookingId = $(booking).data('id');
+        changeBooking(stat, bookingId.toString(), booking);
+
+      }else if($(booking).text() === "confirmed"){
+
+        var stat = "attended";
+        var bookingId = $(booking).data('id');
+        changeBooking(stat, bookingId.toString(), booking);
+
+      };  
 
     });
   });
