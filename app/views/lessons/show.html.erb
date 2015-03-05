@@ -1,32 +1,26 @@
 <div class="lesson-view-container">
+
   <h2><%= @lesson.title %></h2>
-  <ul>
+
+  <% if @spaces_left == 0 %>
+    <h4>This class is fully booked! Go <%= link_to "back", lessons_path %> to view other lessons</h4>
+  <% end %>
+
+  <ul id="lesson-view-ul">
     <li>Description: <%= @lesson.description %></li>
     <li>Instructor: <%= @lesson.instructor.name %></li>
     <li>Capacity: <%= @lesson.capacity %></li>
-    
-    <% if @lesson.capacity %>
-      <li id="lesson-availability" data-avail="<%= @spaces_left %>">Available space left: <%= @spaces_left %></li>
+    <% if current_user %>
+      <% unless @booking.empty? %>
+        <li>Your registration status: <%= @status %></li>
+      <% end %>
     <% end %>
   </ul>
   
-    <% if current_user %>
-        <% unless @booking.empty? %>
-          <li>Registration status: <%= @status %></li>
-        <% end %>
-  
-      <% if @booking.empty? && @lesson_has_space%>
+  <% if current_user %>
+    <% if @booking.empty? %>
+      <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
+    <% end %>
+  <% end %>
 
-      <li id="lesson-availability" data-avail="<%= @space_left %>">Available space left: <%= @space_left %></li>
-    <% end %>
-    <% if current_user %>
-        <% if @no_booking == false %>
-          <li>Registration status: <%= @status %></li>
-        <% end %>
-      </ul>
-      <% if @no_booking %>
-        <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
-      <% end %>
-    <% end %>
-    <% end %>
 </div>
