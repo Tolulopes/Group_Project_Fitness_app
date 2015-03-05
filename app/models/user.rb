@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  scope :instructor, -> (boolean = true) { where(role: "instructor") }
   mount_uploader :image, ImageUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

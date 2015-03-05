@@ -1,0 +1,26 @@
+.navbar-brand {
+  font-family: 'Monda', sans-serif;
+}
+
+.navbar-default .navbar-brand {
+  color: red;
+}
+
+
+.login{
+  text-align: center;
+  margin-top: 10rem;
+  background-color: grey;
+  opacity: 0.7;
+}
+
+
+a:hover {
+  color: #E92445;
+  text-decoration: underline;
+}
+
+.change{
+  background-color: pink;
+}
+

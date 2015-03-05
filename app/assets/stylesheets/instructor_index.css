@@ -1,0 +1,44 @@
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+.tile{
+  display: inline-block;
+  font-size: 20px;
+  width: 33%;
+}
+
+.instructor-image{
+  width: 100%;
+}
+
+.instructor-image img{
+  width: 100%;
+  border-radius: 100%;
+}
+
+.instruct-header {
+  text-align: center;
+  font-size: 80px;
+
+}
+
+.instruct-header h2{
+    color: rgb(255, 0, 139);
+}
+
+.category_description {
+  padding: 30px;
+}
+
+  .lesson-box {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 5px;
+    width: 30%;
+  }

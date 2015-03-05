@@ -1,39 +1,39 @@
 <div class="form-container"><%= form_for(@lesson) do |f| %>
 
-  <div class="letter-field">
+  <div class="letter-field form-group">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
 
-  <div class="letter-field">
+  <div class="letter-field form-group">
     <%= f.label :capacity %><br>
     <%= f.number_field :capacity %>
   </div>
 
-  <div class="letter-field">
+  <div class="letter-field form-group">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
 
 
   <div class="field">
-    <% @categories.each do |category| %> 
+    <% @categories.each do |category| %>
       <%= f.radio_button(:category_id, category.id.to_int) %>
       <%= f.label(:category, category.name) %>
     <% end %>
   </div>
 
-  <div class="letter-field">
+  <div class="letter-field form-group">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
 
-  <div class="letter-field">
+  <div class="letter-field form-group">
     <%= f.label :start_time %><br>
     <%= f.time_select :start_time %>
   </div>
 
-  <div class="letter-field">
+  <div class="letter-field form-group">
     <%= f.label :end_time %><br>
     <%= f.time_select :end_time %>
   </div>

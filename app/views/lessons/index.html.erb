@@ -1,7 +1,7 @@
-<h2>I am the index.html.erb file for lessons</h2>
+<h2>Lessons</h2>
 
 <% if current_user && current_user.role == 'instructor'%>
-  <%= link_to 'NEW Lesson', new_lesson_path %>
+  <p><%= link_to 'NEW Lesson', new_lesson_path %></p>
 <% end %>
 
 <% @lessons.each do |lesson| %>

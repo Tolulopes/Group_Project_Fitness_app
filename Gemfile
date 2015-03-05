@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.4'
 gem 'rails_admin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -27,6 +28,10 @@ gem 'devise'
 gem 'cancancan'
 gem 'carrierwave'
 gem 'ransack'
+gem "fog"
+gem "rails_12factor", group: :production
+gem "thin"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,6 +47,8 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
   gem 'pry-rails'
+
+
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
