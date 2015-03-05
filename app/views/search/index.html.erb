@@ -1,22 +1,22 @@
-<h1>Lessons</h1>
 <% if @lessons.present? %>
+  <h4>Lessons</h4>
   <% @lessons.each do |lesson| %>
-      <%= lesson.title %>
-    <% end %>
+        <%= lesson.title %>
   <% end %>
-
-<h1>Category</h1>
+<% end %>
 
 <% if @categories.present? %>
+  <h4>Category</h4>
   <% @categories.each do |category| %>
-      <%= category.name %>
-    <% end %>
+    <%= category.name %>
   <% end %>
+<% end %>
 
-<h1>User</h1>
-<% if @users.present? %>
-  <% @users.each do |user| %>
-      <%= user.name %>
-    <% end %>
+<% if @instructors.present? %>
+  <h4>Instructors</h4>
+  <% @instructors.each do |user| %>
+    <%= user.name %>
+    <%= user.role %>
   <% end %>
+<% end %>
 

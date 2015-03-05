@@ -2,8 +2,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    # @q = User.ransack(params[:q])
+    # @instructors = @users.where(role: "instructor")
     @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true)
+    # binding.pry
+    @instructors = @q.result.includes(role: "instructor").to_a.uniq
   end
 
   def show
