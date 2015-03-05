@@ -1,13 +1,29 @@
-<div class="category-container">
-<h2><%= @category.name %></h2>
 
+<div class="category-container">
+  <div class="header_container">
+    <h1 class="categories_header"><%= @category.name %></h1></div>
+    <div class="banner" style="
+    background-image: url(<%=@category.image %>);
+    background-size: cover;
+    width: 100%;
+    height: 80%;
+    position: fixed;
+    top: 100px;
+    background-color: #707070;
+    "
+    >
+  </div>
   <div class="lessons-container">
-    <% @category.lessons.each do |x| %>
+    <div class="container">
+      <p class= "category_description"><%= @category.description %></p>
+      <% @category.lessons.each do |lesson| %>
       <div class="lesson-box">
-        <h4> <%=x.title  %></h4>
-        <p>Instructor: <%=x.instructor.name  %> </p>
-        <%= link_to "more info", lesson_path(x) %>
+        <h4> <%=lesson.title  %></h4>
+        <p>Instructor: <%=lesson.instructor.name  %> </p>
+        <%= link_to "more info", lesson_path(lesson) %>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
+

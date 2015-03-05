@@ -1,0 +1,15 @@
+.header_container{
+  height: 100px;
+  background-color: #dbdbdb;
+  width: 100%;
+  z-index: 10;
+}
+
+.lessons-container{
+  width: 100%;
+  position: relative;
+  top: 400px;
+  background-color: #ebebeb;
+  height: 500px;
+  opacity: 0.7;
+}
