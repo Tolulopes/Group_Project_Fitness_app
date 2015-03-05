@@ -12,7 +12,7 @@ function request(method, url, data){
 function changeBooking(lesson, user, stat){
 
   request("POST", "/bookings", {booking:{lesson_id: lesson, user_id: user, status: stat}}).done(function(data){
-    
+    console.log("updated booking table, ", "lesson id: ", lesson, "user id: ", user, stat);
 
     if(stat === "pending") {
       $("#apply-to-join").hide();
@@ -20,7 +20,7 @@ function changeBooking(lesson, user, stat){
       $("#lesson-availability").replaceWith("<li>Available space left: " + nowAvailable + "</li>");
     }else if ( stat === "confirmed" ) {
       
-    };
+    }
   });
 };
 
