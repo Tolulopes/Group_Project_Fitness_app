@@ -1,26 +1,31 @@
-<div class="lesson-view-container">
 
-  <h2><%= @lesson.title %></h2>
+<div class="lesson-view-page">
+  <div class="lesson-view-container">
 
-  <% if @spaces_left == 0 %>
-    <h4>This class is fully booked! Go <%= link_to "back", lessons_path %> to view other lessons</h4>
-  <% end %>
+    <h2><%= @lesson.title %></h2>
 
-  <ul id="lesson-view-ul">
-    <li>Description: <%= @lesson.description %></li>
-    <li>Instructor: <%= @lesson.instructor.name %></li>
-    <li>Capacity: <%= @lesson.capacity %></li>
+    <% if @spaces_left == 0 %>
+      <h4>This class is fully booked! Go <%= pnk_to "back", lessons_path %> to view other lessons</h4>
+    <% end %>
+
+      <p><strong>Description:</strong> <%= @lesson.description %></p><br>
+      <p><strong>Instructor:</strong> <%= @lesson.instructor.name %></p><br>
+      <p><strong>Capacity:</strong> <%= @lesson.capacity %></p><br>
+      <p><strong>Date:</strong> <%= Date::MONTHNAMES[@lesson.date.month] %> / <%= @lesson.date.day %> / <%= @lesson.date.year %></p><br>
+      <p><strong>Time:</strong> <%= @lesson.start_time.hour %>:<%= @lesson.start_time.min %> - <%= @lesson.end_time.hour %>:<%= @lesson.end_time.min %></p><br>
+      <% if current_user %>
+        <% unless @booking.empty? %>
+          <p>Your registration status: <%= @status %></p>
+        <% end %>
+      <% end %>
+
     <% if current_user %>
-      <% unless @booking.empty? %>
-        <li>Your registration status: <%= @status %></li>
+      <% if @booking.empty? %>
+        <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
       <% end %>
     <% end %>
-  </ul>
-  
-  <% if current_user %>
-    <% if @booking.empty? %>
-      <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
-    <% end %>
-  <% end %>
-
+  </div>
+  <div class="lesson-image-show">
+    <%= image_tag "https://s3-eu-west-1.amazonaws.com/fitnessproject/slide4.jpg" %>
+  <div class="placeholder-lesson-image"><%=  %></div>
 </div>
