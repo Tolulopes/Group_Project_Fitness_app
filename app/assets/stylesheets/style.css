@@ -5,3 +5,20 @@
 .navbar-default .navbar-brand {
   color: red;
 }
+
+
+.login{
+  text-align: center;
+  margin-top: 10rem;
+  background-color: grey;
+  opacity: 0.7;
+}
+
+.box1{
+  text-align: center;
+}
+
+a:hover {
+  color: #E92445;
+  text-decoration: underline;
+}
