@@ -9,15 +9,13 @@ class BookingsController < ActionController::Base
   end
 
   def create
-    puts :status
-    puts :user_id
     @booking = Booking.create(booking_params)
     render json: @booking, status: :created
   end
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update params.require(:task).permid(:done)
+    @booking.update(booking_params)
     head :no_content, status: :ok
   end
 

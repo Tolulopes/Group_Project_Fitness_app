@@ -20,12 +20,21 @@ function createBooking(lesson, user, stat){
   });
 };
 
-function changeBooking(lesson, user, stat, bookingId){
+function changeBooking(lesson, user, stat, bookingId, booking){
+
+  console.log("change booking table, ", "lesson id: ", lesson, "user id: ", user, stat, bookingId);
+  console.log("/bookings/"+bookingId);
 
   request("PUT", "/bookings/"+bookingId, {booking:{lesson_id: lesson, user_id: user, status: stat}}).done(function(data){
-    console.log("change booking table, ", "lesson id: ", lesson, "user id: ", user, stat, bookingId);
 
-    // $("#apply-to-join").hide();
+    console.log("booking created?", stat);
+    debugger;
+
+    // if stat === "confirmed"
+    //   then turn off button and make text "attended"
+
+
+    $(this).text("confirmed");
     // $("#lesson-view-ul").append("<li>Your registration status: pending</li>");
 
   });
@@ -50,8 +59,15 @@ $(document).ready(function(){
       var user = $(booking).data('user');
       var stat = "confirmed";
       var bookingId = $(booking).data('id');
+
+      // if button text is pending?
+      //   do the above
+
+      // else if the button text is confirmed?
+      //   status = attended
+      //   make request and in the done disable the button
       
-      changeBooking(lesson.toString(), user.toString(), stat, bookingId);
+      changeBooking(lesson.toString(), user.toString(), stat, bookingId.toString(), booking);
 
     });
   });
