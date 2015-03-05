@@ -1,3 +1,7 @@
 .navbar-brand {
   font-family: 'Monda', sans-serif;
 }
+
+.navbar-default .navbar-brand {
+  color: red;
+}
