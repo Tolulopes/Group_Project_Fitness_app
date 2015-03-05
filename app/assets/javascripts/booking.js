@@ -9,17 +9,34 @@ function request(method, url, data){
   });
 };
 
-function createBooking(lesson, user, stat){
+function changeBooking(lesson, user, stat){
 
   request("POST", "/bookings", {booking:{lesson_id: lesson, user_id: user, status: stat}}).done(function(data){
     console.log("updated booking table, ", "lesson id: ", lesson, "user id: ", user, stat);
-    $("#apply-to-join").hide();
 
-    var nowAvailable = $("#lesson-availability").data("avail") - 1;
-
-    $("#lesson-availability").replaceWith("<li>Available space left: " + nowAvailable + "</li>");
+    if(stat === "pending") {
+      $("#apply-to-join").hide();
+      var nowAvailable = $("#lesson-availability").data("avail") - 1;
+      $("#lesson-availability").replaceWith("<li>Available space left: " + nowAvailable + "</li>");
+    }else if ( stat === "confirmed" ) {
+      
+    }
   });
 };
+
+// function confirmBooking(lesson, user, stat){
+//   console.log("inside confirm booking function")
+  
+
+  // request("POST", "/bookings", {booking:{lesson_id: lesson, user_id: user, status: stat}}).done(function(data){
+  //   console.log("updated booking table, ", "lesson id: ", lesson, "user id: ", user, stat);
+  //   $("#apply-to-join").hide();
+
+  //   var nowAvailable = $("#lesson-availability").data("avail") - 1;
+
+  //   $("#lesson-availability").replaceWith("<li>Available space left: " + nowAvailable + "</li>");
+  // });
+// };
 
 $(document).ready(function(){
   $("#apply-to-join").on("click", function(e){
@@ -28,7 +45,20 @@ $(document).ready(function(){
     var user = $('#apply-to-join').data('user');
     var stat = "pending";
 
-    createBooking(lesson.toString(), user.toString(), stat);
+    changeBooking(lesson.toString(), user.toString(), stat);
+
+  });
+
+  $(".confirm-booking").on("click", function(e){
+
+    $(this).each(function(index, booking){
+      var lesson = $(booking).data('id');
+      var user = $(booking).data('user');
+      var stat = "confirmed";
+      
+      changeBooking(lesson.toString(), user.toString(), stat);
+
+    });
 
   });
 
