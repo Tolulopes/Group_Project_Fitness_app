@@ -2,12 +2,9 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    # @q = User.ransack(params[:q])
-    # @instructors = @users.where(role: "instructor")
+    @lessons = Lesson.all
     @q = User.ransack(params[:q])
-    # binding.pry
     @users = @q.result(distinct: true)
-
   end
 
   def show
