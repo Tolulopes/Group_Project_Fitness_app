@@ -54,7 +54,7 @@ Natalie specialises in fat loss and building lean muscle - this is the art of im
 " )
 u22.password = 'password'
 u22.password_confirmation = 'password'
-u22.image = 'https://s3-eu-west-1.amazonaws.com/fitnessproject/vinisha.jpg'
+u22.image = File.open(Rails.root + 'seed_images/vinisha.jpg')
 u22.save!
 
 u4 = User.new(name:"Iain",role:"client", email: "iain@me.com")
