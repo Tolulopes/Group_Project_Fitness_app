@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @bookings = Booking.all
     @bookings_as_client = @bookings.where(user_id: @user.id)
     @lessons_as_instructor = @lessons.where(instructor_id: @user.id)
+    @review = Review.new
   end
 
 
