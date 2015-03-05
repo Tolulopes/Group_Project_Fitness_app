@@ -48,7 +48,7 @@ u21.password_confirmation = 'password'
 u21.image = File.open(Rails.root + 'seed_images/tobias.jpg')
 u21.save!
 
-u22 = User.new(name:"Vinisha",role:"instructor",email:"natalie@me.com", biography:"Coming from a Athletic background in sprinting, Natalie has always been passionate about the world of fitness. After studying to become a Personal Trainer, Natalie decided to advance her knowledge with specialist Strength Coaching qualifications and Nutritional courses.
+u22 = User.new(name:"Vinisha",role:"instructor",email:"vinisha@me.com", biography:"Coming from a Athletic background in sprinting, Natalie has always been passionate about the world of fitness. After studying to become a Personal Trainer, Natalie decided to advance her knowledge with specialist Strength Coaching qualifications and Nutritional courses.
 
 Natalie specialises in fat loss and building lean muscle - this is the art of improving body composition, which Natalie has fine tuned with her years of experience to get her clients the fastest possible results and the best physical transformations.
 " )
@@ -109,59 +109,60 @@ Frame’s QUICKIES are high intensity group training sessions designed to give y
 
 l1 = Lesson.create(title:"Intro to Yoga",description:"Yoga is a science of right living and it works when integrated in our daily life. It works on all aspects of the person: the physical, mental, emotional, psychic and spiritual. The word yoga means ‘unity’ or ‘oneness’ and is derived from the Sanskrit word ‘yuj’ which means ‘to join’.
 
-There are too many misconceptions clouding the science of Yoga. People perceive it to be some kind of black or white magic, sorcery, physical or mental debauchery through which miraculous feats can be performed. For some it is an extremely dangerous practice which should be limited to only those who have renounced the world. Few others think it to be a kind of mental and physical acrobatism that is compatible only to a Hindu mind.",category_id: c3.id, instructor_id: u2.id)
+There are too many misconceptions clouding the science of Yoga. People perceive it to be some kind of black or white magic, sorcery, physical or mental debauchery through which miraculous feats can be performed. For some it is an extremely dangerous practice which should be limited to only those who have renounced the world. Few others think it to be a kind of mental and physical acrobatism that is compatible only to a Hindu mind.", capacity: 20, instructor_id: u2.id, category_id: c3.id, start_time: Time.new(2000,1,1,9,30), end_time: Time.new(2000,1,1,10,0), date: Date.new(2015,1,1),category_id: c3.id, instructor_id: u2.id)
+
+
 
   l2 = Lesson.create(title:"Advanced Yoga",description: "Yoga is a science of right living and it works when integrated in our daily life. It works on all aspects of the person: the physical, mental, emotional, psychic and spiritual. The word yoga means ‘unity’ or ‘oneness’ and is derived from the Sanskrit word ‘yuj’ which means ‘to join’.
 
-There are too many misconceptions clouding the science of Yoga. People perceive it to be some kind of black or white magic, sorcery, physical or mental debauchery through which miraculous feats can be performed. For some it is an extremely dangerous practice which should be limited to only those who have renounced the world. Few others think it to be a kind of mental and physical acrobatism that is compatible only to a Hindu mind.",category_id: c3.id, instructor_id: u2.id)
+There are too many misconceptions clouding the science of Yoga. People perceive it to be some kind of black or white magic, sorcery, physical or mental debauchery through which miraculous feats can be performed. For some it is an extremely dangerous practice which should be limited to only those who have renounced the world. Few others think it to be a kind of mental and physical acrobatism that is compatible only to a Hindu mind.", instructor_id: u2.id, category_id: c3.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,1,12),capacity: 10)
 
     l3 = Lesson.create(title:"poledancing 101",description: "Pole dancing is a unique dance form that combines strength, coordination, cardiovascular exercise, elegance, posture and flexibility in a dynamic and fun way that is never boring, never feels like a fitness class and always gives you a great workout. It's not only a great new way to get fit, but also a wonderfully empowering experience for women.
 
-      At Pole Dancing School you can experience this ultimate sense of self expression. Whether you're a beginner wanting to learn new moves for personal enjoyment or an experienced dancer or fitness professional wanting to develop your career, we have just the class for you. We offer open classes, scheduled courses, private lessons, private pole dancing events, technical workshops and dance/career consulting. All our classes are held in the Central London area only.",category_id: c1.id, instructor_id: u3.id)
+      At Pole Dancing School you can experience this ultimate sense of self expression. Whether you're a beginner wanting to learn new moves for personal enjoyment or an experienced dancer or fitness professional wanting to develop your career, we have just the class for you. We offer open classes, scheduled courses, private lessons, private pole dancing events, technical workshops and dance/career consulting. All our classes are held in the Central London area only.",category_id: c1.id, instructor_id: u3.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,1,15),capacity: 10)
 
-    l4 = Lesson.create(title:"Muay Thai Kick Boxing", description: "First developed in Thailand 16th century as a warfare art, muay thai is renowned for its effective use of low kicks, knees & elbows. The classes are very friendly and you will quickly settle in so don’t be shy. The classes are multi level so you will work at a level to suit you. You don’t need to rely on friends turning up, we can find you a partner to train with.",category_id: c4.id, instructor_id: u1.id)
+    l4 = Lesson.create(title:"Muay Thai Kick Boxing", description: "First developed in Thailand 16th century as a warfare art, muay thai is renowned for its effective use of low kicks, knees & elbows. The classes are very friendly and you will quickly settle in so don’t be shy. The classes are multi level so you will work at a level to suit you. You don’t need to rely on friends turning up, we can find you a partner to train with.",category_id: c4.id, instructor_id: u1.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,1,18),capacity: 20)
 
     l5 = Lesson.create(title:"Urban Workout ", description: "This workout is designed by Tobias Hale, an instructor in ‘parkour’ – the French discipline of moving through your environment without letting any obstacles stop you.
 
-He runs training camps that utilise parkour techniques to turn urban areas into gym-free, fat-burning environments. Try this 2-4 times a week on your way home from work and shed up to 4kg in a month.",category_id: c2.id, instructor_id: u21.id)
+He runs training camps that utilise parkour techniques to turn urban areas into gym-free, fat-burning environments. Try this 2-4 times a week on your way home from work and shed up to 4kg in a month.",category_id: c2.id, instructor_id: u21.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,2,1),capacity: 5)
 
-    l6 = Lesson.create(title:"circuit training 1", description: "30 minutes of intense conditioning work using a kettlebell. From kettlebell swings, to windmills, to squats, lunges, rows, snatches and cleans. This class will work your entire body and give you a great workout, concentrating on the butt, core and shoulders. Don't be fooled by the 30 minute length of this class, it's a tough workout, but will be over before you know it.",category_id: c2.id, instructor_id: u20.id)
+    l6 = Lesson.create(title:"circuit training 1", description: "30 minutes of intense conditioning work using a kettlebell. From kettlebell swings, to windmills, to squats, lunges, rows, snatches and cleans. This class will work your entire body and give you a great workout, concentrating on the butt, core and shoulders. Don't be fooled by the 30 minute length of this class, it's a tough workout, but will be over before you know it.",category_id: c5.id, instructor_id: u20.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,2,28),capacity: 15)
 
-    l14 = Lesson.create(title:"circuit training 2", description: "30 minutes of intense conditioning work using a kettlebell. From kettlebell swings, to windmills, to squats, lunges, rows, snatches and cleans. This class will work your entire body and give you a great workout, concentrating on the butt, core and shoulders. Don't be fooled by the 30 minute length of this class, it's a tough workout, but will be over before you know it.",category_id: c2.id, instructor_id: u20.id)
+    l14 = Lesson.create(title:"circuit training 2", description: "30 minutes of intense conditioning work using a kettlebell. From kettlebell swings, to windmills, to squats, lunges, rows, snatches and cleans. This class will work your entire body and give you a great workout, concentrating on the butt, core and shoulders. Don't be fooled by the 30 minute length of this class, it's a tough workout, but will be over before you know it.",category_id: c5.id, instructor_id: u20.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,1,12),capacity: 5)
 
     l7 = Lesson.create(title:"Daybrakr", description: "Kickstart the beginning of your day with an intense burst of clubbing.
 
-      We offer crazy dancing, delicious smoothies and cool floating jellyfish and all before your first morning meeting!",category_id: c2.id, instructor_id: u2.id)
+      We offer crazy dancing, delicious smoothies and cool floating jellyfish and all before your first morning meeting!",category_id: c2.id, instructor_id: u2.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,3,1),capacity: 5)
 
-    l8 = Lesson.create(title:"Advanced Kung-Fu Self Defense Classes", description: "Learn to strike out with power, accuracy and the element of surprise. I will teach you to effectively channel your inner-energy into outward blows and develop the disciplined mindset required to engage with China's oldest combat tradition",category_id: c2.id, instructor_id: u3.id)
 
-    l9 = Lesson.create(title:"Modern Dance: Thriller", description: "Come and join us at one of GetFit's most popular classes. We will choreograph and rehearse syncronised routines to modern pop and R & B songs before performing to friends and family in 1 months time. This month's Song is Michael Jackson's 'Thriller', any standard of dancer is welcome although applicants with previous moonwalking experience will be viewed favourably",category_id: c2.id, instructor_id: u3.id)
+    l9 = Lesson.create(title:"Modern Dance: Thriller", description: "Come and join us at one of GetFit's most popular classes. We will choreograph and rehearse syncronised routines to modern pop and R & B songs before performing to friends and family in 1 months time. This month's Song is Michael Jackson's 'Thriller', any standard of dancer is welcome although applicants with previous moonwalking experience will be viewed favourably",category_id: c1.id, instructor_id: u3.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,1,1),capacity: 5)
 
-    l10 = Lesson.create(title:"Modern Dance: Hips Don't Lie", description: "Come and join us at one of GetFit's most popular classes. We will choreograph and rehearse syncronised routines to modern pop and R & B songs before performing to friends and family in 1 months time. This month's Song is Skakira's 'Hips Don't Lie', both sexes are welcome to join the group but be warned that you will be required to wear sequins in our final performance",category_id: c2.id, instructor_id: u3.id)
+    l10 = Lesson.create(title:"Modern Dance: Hips Don't Lie", description: "Come and join us at one of GetFit's most popular classes. We will choreograph and rehearse syncronised routines to modern pop and R & B songs before performing to friends and family in 1 months time. This month's Song is Skakira's 'Hips Don't Lie', both sexes are welcome to join the group but be warned that you will be required to wear sequins in our final performance",category_id: c1.id, instructor_id: u3.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,4,12),capacity: 5)
 
-    l11 = Lesson.create(title:"circuit training", description: "30 minutes of intense conditioning work using a kettlebell. From kettlebell swings, to windmills, to squats, lunges, rows, snatches and cleans. This class will work your entire body and give you a great workout, concentrating on the butt, core and shoulders. Don't be fooled by the 30 minute length of this class, it's a tough workout, but will be over before you know it.",category_id: c2.id, instructor_id: u1.id)
+    l11 = Lesson.create(title:"circuit training", description: "30 minutes of intense conditioning work using a kettlebell. From kettlebell swings, to windmills, to squats, lunges, rows, snatches and cleans. This class will work your entire body and give you a great workout, concentrating on the butt, core and shoulders. Don't be fooled by the 30 minute length of this class, it's a tough workout, but will be over before you know it.",category_id: c4.id, instructor_id: u1.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2014,5,11),capacity: 15)
 
-    l12 = Lesson.create(title:"circuit training", description: "30 minutes of intense conditioning work using a kettlebell. From kettlebell swings, to windmills, to squats, lunges, rows, snatches and cleans. This class will work your entire body and give you a great workout, concentrating on the butt, core and shoulders. Don't be fooled by the 30 minute length of this class, it's a tough workout, but will be over before you know it.",category_id: c2.id, instructor_id: u21.id)
+    l12 = Lesson.create(title:"circuit training", description: "30 minutes of intense conditioning work using a kettlebell. From kettlebell swings, to windmills, to squats, lunges, rows, snatches and cleans. This class will work your entire body and give you a great workout, concentrating on the butt, core and shoulders. Don't be fooled by the 30 minute length of this class, it's a tough workout, but will be over before you know it.",category_id: c4.id, instructor_id: u21.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,4,10),capacity: 40)
 
-    l13 = Lesson.create(title:"spinning", description: "Join our friendly spinning group. We have state-of-the-art equipment and a well-trained instructor who will tailor the class to the needs of the group. We also have a cutting-edge soundsystem and a carefully curated playlist to keep you in the zone for the duration of the workout",category_id: c2.id, instructor_id: u22.id)
+    l13 = Lesson.create(title:"spinning", description: "Join our friendly spinning group. We have state-of-the-art equipment and a well-trained instructor who will tailor the class to the needs of the group. We also have a cutting-edge soundsystem and a carefully curated playlist to keep you in the zone for the duration of the workout",category_id: c5.id, instructor_id: u22.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,3,15),capacity: 5)
 
-    l15 = Lesson.create(title:"spinning", description: "Join our friendly spinning group. We have state-of-the-art equipment and a well-trained instructor who will tailor the class to the needs of the group. We also have a cutting-edge soundsystem and a carefully curated playlist to keep you in the zone for the duration of the workout",category_id: c2.id, instructor_id: u22.id)
+    l15 = Lesson.create(title:"spinning", description: "Join our friendly spinning group. We have state-of-the-art equipment and a well-trained instructor who will tailor the class to the needs of the group. We also have a cutting-edge soundsystem and a carefully curated playlist to keep you in the zone for the duration of the workout",category_id: c5.id, instructor_id: u22.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,3,20),capacity: 10)
 
-    l16 = Lesson.create(title:"Advanced Parkour", description: "Parkour influences one's thought processes by enhancing self-confidence and critical thinking skills that allow one to overcome everyday physical and mental obstacles. During this class we will also overcome physical obstacles such as bridges, apartment-blocks and industrial cranes.",category_id: c2.id, instructor_id: u22.id)
+    l16 = Lesson.create(title:"Advanced Parkour", description: "Parkour influences one's thought processes by enhancing self-confidence and critical thinking skills that allow one to overcome everyday physical and mental obstacles. During this class we will also overcome physical obstacles such as bridges, apartment-blocks and industrial cranes.",category_id: c2.id, instructor_id: u22.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,3,15),capacity: 10)
 
     l18 = Lesson.create(title:"Insanity 1", description: "Want to get fitter, faster? Then our new Insanity classes could be just the thing for you.
 
-      The cardio-based, total-body conditioning programme and is based on 'max interval training', a faster way of burning calories and this 45 minute routine will allow you to achieve a 1000-calorie burn."
+      The cardio-based, total-body conditioning programme and is based on 'max interval training', a faster way of burning calories and this 45 minute routine will allow you to achieve a 1000-calorie burn.", instructor_id: u2.id, category_id: c4.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,3,18),capacity: 10)
 
      
 
     l19 = Lesson.create(title:"Insanity 2", description: "Want to get fitter, faster? Then our new Insanity classes could be just the thing for you.
 
-      The cardio-based, total-body conditioning programme and is based on 'max interval training', a faster way of burning calories and this 45 minute routine will allow you to achieve a 1000-calorie burn.",category_id: c2.id, instructor_id: u22.id)
+      The cardio-based, total-body conditioning programme and is based on 'max interval training', a faster way of burning calories and this 45 minute routine will allow you to achieve a 1000-calorie burn.",category_id: c2.id, instructor_id: u2.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,3,21),capacity: 10)
 
     l20 = Lesson.create(title:"Insanity 3", description: "Want to get fitter, faster? Then our new Insanity classes could be just the thing for you.
 
-      The cardio-based, total-body conditioning programme and is based on 'max interval training', a faster way of burning calories and this 45 minute routine will allow you to achieve a 1000-calorie burn.",category_id: c2.id, instructor_id: u22.id)
+      The cardio-based, total-body conditioning programme and is based on 'max interval training', a faster way of burning calories and this 45 minute routine will allow you to achieve a 1000-calorie burn.",category_id: c2.id, instructor_id: u2.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,3,30),capacity: 10)
 
 
   r1 = Review.create(user_id: u4.id, lesson_id: l3.id, rating: 5, comment: "Loved it!")
@@ -170,58 +171,58 @@ He runs training camps that utilise parkour techniques to turn urban areas into 
 
   r3 = Review.create(user_id: u6.id, lesson_id: l2.id, rating: 1, comment: "Too tiring")
 
-  r4 = Review.create(user_id: u7.id, lesson_id: l1.id, rating: 4, comment: "Really relaxing and spiritual")
+  r4 = Review.create(user_id: u7.id, lesson_id: l1.id, rating: 4, comment: "Great")
 
-  r5 = Review.create(user_id: u7.id, lesson_id: l4.id, rating: 3, comment: "Really relaxing and spiritual")
+  r5 = Review.create(user_id: u4.id, lesson_id: l4.id, rating: 1, comment: "Boring")
 
-  r6 = Review.create(user_id: u7.id, lesson_id: l4.id, rating: 5, comment: "Really relaxing and spiritual")
+  r6 = Review.create(user_id: u5.id, lesson_id: l4.id, rating: 5, comment: "Loved it!")
 
-  r7 = Review.create(user_id: u7.id, lesson_id: l5.id, rating: 2, comment: "Really relaxing and spiritual")
+  r7 = Review.create(user_id: u6.id, lesson_id: l5.id, rating: 2, comment: "Not good enough")
 
-  r8 = Review.create(user_id: u7.id, lesson_id: l6.id, rating: 1, comment: "Really relaxing and spiritual")
+  r8 = Review.create(user_id: u7.id, lesson_id: l6.id, rating: 1, comment: "Terrible")
 
 
-  r9 = Review.create(user_id: u7.id, lesson_id: l7.id, rating: 3, comment: "Really relaxing and spiritual")
+  r9 = Review.create(user_id: u4.id, lesson_id: l7.id, rating: 3, comment: "I thought it was ok")
 
-  r10 = Review.create(user_id: u7.id, lesson_id: l8.id, rating: 2, comment: "Really relaxing and spiritual")
+  r10 = Review.create(user_id: u5.id, lesson_id: l9.id, rating: 2, comment: "Not good enough")
 
-  r11 = Review.create(user_id: u7.id, lesson_id: l8.id, rating: 5, comment: "Really relaxing and spiritual")
+  r11 = Review.create(user_id: u6.id, lesson_id: l9.id, rating: 5, comment: "Great lesson")
 
-  r12 = Review.create(user_id: u7.id, lesson_id: l9.id, rating: 2, comment: "Really relaxing and spiritual")
+  r12 = Review.create(user_id: u7.id, lesson_id: l9.id, rating: 2, comment: "Not tailored to our class's needs")
 
-  b1 = Booking.create(user_id:u4.id,lesson_id:l3.id, status: 'attended')
-  b2 = Booking.create(user_id:u5.id,lesson_id:l3.id, status: 'attended')
-  b3 = Booking.create(user_id:u6.id,lesson_id:l2.id, status: 'attended')
-  b4 = Booking.create(user_id:u7.id,lesson_id:l1.id, status: 'attended')
-  b5 = Booking.create(user_id:u7.id,lesson_id:l4.id, status: 'attended')
-  b6 = Booking.create(user_id:u7.id,lesson_id:l4.id, status: 'attended')
-  b7 = Booking.create(user_id:u7.id,lesson_id:l5.id, status: 'attended')
-  b8 = Booking.create(user_id:u7.id,lesson_id:l6.id, status: 'attended')
-  b9 = Booking.create(user_id:u7.id,lesson_id:l7.id, status: 'attended')
+  b1 = Booking.create(user_id:u4.id,lesson_id:l3.id, status: 'confirmed')
+  b2 = Booking.create(user_id:u5.id,lesson_id:l3.id, status: 'confirmed')
+  b3 = Booking.create(user_id:u6.id,lesson_id:l2.id, status: 'confirmed')
+  b4 = Booking.create(user_id:u7.id,lesson_id:l1.id, status: 'confirmed')
+  b5 = Booking.create(user_id:u4.id,lesson_id:l4.id, status: 'confirmed')
+  b6 = Booking.create(user_id:u5.id,lesson_id:l4.id, status: 'confirmed')
+  b7 = Booking.create(user_id:u6.id,lesson_id:l5.id, status: 'confirmed')
+  b8 = Booking.create(user_id:u7.id,lesson_id:l6.id, status: 'confirmed')
+  b9 = Booking.create(user_id:u4.id,lesson_id:l7.id, status: 'confirmed')
 
-  b10 = Booking.create(user_id:u7.id,lesson_id:l8.id, status: 'attended')
+  b10 = Booking.create(user_id:u5.id,lesson_id:l9.id, status: 'confirmed')
 
-  b11 = Booking.create(user_id:u7.id,lesson_id:l8.id, status: 'attended')
+  b11 = Booking.create(user_id:u6.id,lesson_id:l9.id, status: 'confirmed')
 
-  b12 = Booking.create(user_id:u7.id,lesson_id:l9.id, status: 'attended')
+  b12 = Booking.create(user_id:u7.id,lesson_id:l9.id, status: 'confirmed')
 
-  b13 = Booking.create(user_id:u7.id,lesson_id:l10.id, status: 'attended')
+  b13 = Booking.create(user_id:u4.id,lesson_id:l10.id, status: 'pending')
 
-  b14 = Booking.create(user_id:u7.id,lesson_id:l11.id, status: 'attended')
+  b14 = Booking.create(user_id:u5.id,lesson_id:l11.id, status: 'pending')
 
-  b15 = Booking.create(user_id:u7.id,lesson_id:l12.id, status: 'attended')
+  b15 = Booking.create(user_id:u6.id,lesson_id:l12.id, status: 'pending')
 
-  b16 = Booking.create(user_id:u7.id,lesson_id:l13.id, status: 'attended')
+  b16 = Booking.create(user_id:u7.id,lesson_id:l13.id, status: 'pending')
 
-  b17 = Booking.create(user_id:u7.id,lesson_id:l13.id, status: 'attended')
+  b17 = Booking.create(user_id:u4.id,lesson_id:l13.id, status: 'pending')
 
-  b18 = Booking.create(user_id:u7.id,lesson_id:l15.id, status: 'attended')
+  b18 = Booking.create(user_id:u5.id,lesson_id:l15.id, status: 'pending')
 
-  b19 = Booking.create(user_id:u7.id,lesson_id:l15.id, status: 'attended')
+  b19 = Booking.create(user_id:u6.id,lesson_id:l15.id, status: 'pending')
 
-  b20 = Booking.create(user_id:u7.id,lesson_id:l16.id, status: 'attended')
+  b20 = Booking.create(user_id:u7.id,lesson_id:l16.id, status: 'pending')
 
-  b21 = Booking.create(user_id:u7.id,lesson_id:l17.id, status: 'attended')
+  b21 = Booking.create(user_id:u4.id,lesson_id:l18.id, status: 'pending')
 
 
 
