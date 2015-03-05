@@ -23,13 +23,16 @@ class LessonsController < ApplicationController
       @lesson_has_space = true
     end
 
-    @booking = @user.bookings.where(lesson_id: @lesson.id)
-    @no_booking = @booking.empty?
-    if @no_booking
-      nil
-    else
-      @status = @booking.first.status
+    unless @user.nil?
+      @booking = @user.bookings.where(lesson_id: @lesson.id)
     end
+
+    # @no_booking = @booking.empty?
+    # if @no_booking
+    #   nil
+    # else
+    #   @status = @booking.first.status
+    # end
     @space_left = @lesson.capacity-@lesson.bookings.length
   end
 
