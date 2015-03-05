@@ -1,0 +1,23 @@
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.tile{
+  display: inline-block;
+  font-size: 20px;
+  width: 33%;
+}
+
+.instructor-image{
+  width: 100%;
+}
+
+.instructor-image img{
+  width: 100%;
+}
+
+.instruct-header {
+  text-align: center;
+  font-size: 80px;
+}
