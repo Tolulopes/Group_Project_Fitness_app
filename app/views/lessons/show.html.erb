@@ -6,6 +6,7 @@
     <li>Instructor: <%= @lesson.instructor.name %></li>
     <li>Capacity: <%= @lesson.capacity %></li>
     <% if @lesson.capacity %>
+
       <li id="lesson-availability" data-avail="<%= @spaces_left %>">Available space left: <%= @spaces_left %></li>
     <% end %>
     <% if current_user %>
@@ -14,6 +15,15 @@
         <% end %>
       </ul>
       <% if @booking.empty? && @lesson_has_space%>
+
+      <li id="lesson-availability" data-avail="<%= @space_left %>">Available space left: <%= @space_left %></li>
+    <% end %>
+    <% if current_user %>
+        <% if @no_booking == false %>
+          <li>Registration status: <%= @status %></li>
+        <% end %>
+      </ul>
+      <% if @no_booking %>
         <button id="apply-to-join" data-id="<%= @lesson.id %>" data-user="<%= @user.id %>">Apply to join now</button>
       <% end %>
     <% end %>
