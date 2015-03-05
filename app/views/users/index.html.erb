@@ -2,6 +2,6 @@
 
 <% @users.each do |user| %>
   <% if user.role == 'instructor' %>
-    <p>Meet <%= link_to user.name, user_path(user) %> who teaches <%= @lessons.where(instructor_id: user.id).sample.title %></p>
+    <p>Meet <%= link_to user.name, user_path(user) %></p>
   <% end %>
 <% end %>
