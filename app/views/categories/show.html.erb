@@ -12,16 +12,18 @@
     background-color: #707070;
     "
     >
-    </div>
-    <div class="lessons-container">
-    <p><%= @category.description %></p>
-      <% @category.lessons.each do |x| %>
+  </div>
+  <div class="lessons-container">
+    <div class="container">
+      <p class= "category_description"><%= @category.description %></p>
+      <% @category.lessons.each do |lesson| %>
       <div class="lesson-box">
-        <h4> <%=x.title  %></h4>
-        <p>Instructor: <%=x.instructor.name  %> </p>
-        <%= link_to "more info", lesson_path(x) %>
+        <h4> <%=lesson.title  %></h4>
+        <p>Instructor: <%=lesson.instructor.name  %> </p>
+        <%= link_to "more info", lesson_path(lesson) %>
       </div>
       <% end %>
     </div>
   </div>
+</div>
 
