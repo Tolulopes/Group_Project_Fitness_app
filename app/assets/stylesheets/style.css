@@ -14,11 +14,16 @@
   opacity: 0.7;
 }
 
-.box1{
-  text-align: center;
-}
 
 a:hover {
   color: #E92445;
   text-decoration: underline;
+}
+
+.change{
+  background-color: pink;
+}
+
+#input[type=file] {
+  display: center;
 }
