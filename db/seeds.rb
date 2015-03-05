@@ -154,7 +154,7 @@ He runs training camps that utilise parkour techniques to turn urban areas into 
 
       The cardio-based, total-body conditioning programme and is based on 'max interval training', a faster way of burning calories and this 45 minute routine will allow you to achieve a 1000-calorie burn.", instructor_id: u2.id, category_id: c4.id, start_time: Time.new(2000,1,2,9,30), end_time: Time.new(2000,1,1,11,30), date: Date.new(2015,3,18),capacity: 10)
 
-     
+
 
     l19 = Lesson.create(title:"Insanity 2", description: "Want to get fitter, faster? Then our new Insanity classes could be just the thing for you.
 
@@ -224,7 +224,7 @@ He runs training camps that utilise parkour techniques to turn urban areas into 
 
   b21 = Booking.create(user_id:u4.id,lesson_id:l18.id, status: 'pending')
 
-
+puts 'all done!'
 
 
 
