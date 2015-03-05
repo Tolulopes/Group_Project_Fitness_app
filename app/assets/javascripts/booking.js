@@ -16,8 +16,9 @@ function changeBooking(lesson, user, stat){
 
     if(stat === "pending") {
       $("#apply-to-join").hide();
-      var nowAvailable = $("#lesson-availability").data("avail") - 1;
-      $("#lesson-availability").replaceWith("<li>Available space left: " + nowAvailable + "</li>");
+      // var nowAvailable = $("#lesson-availability").data("avail") - 1;
+      // $("#lesson-availability").replaceWith("<li>Available space left: " + nowAvailable + "</li>");
+      $("#lesson-view-ul").append("<li>Your registration status: pending</li>");
     }else if ( stat === "confirmed" ) {
       
     }
