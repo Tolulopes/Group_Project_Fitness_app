@@ -1,0 +1,35 @@
+
+a {
+  color: black;
+}
+
+.instruct-header {
+  color: white;
+}
+
+p{
+  color: black;
+}
+
+.lesson-view-page{
+  display: inline-block;
+  margin: 20px;
+}
+
+.lesson-view-container{
+  width: 40%;
+  display: inline-block;
+}
+
+.lesson-image-show{
+  width: 40%;
+  display: inline-block;
+}
+
+.lesson-image-show img{
+  border-radius: 10px;
+}
+
+.user-content{
+  font-size: 20px;
+}
