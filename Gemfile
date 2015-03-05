@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.4'
 gem 'rails_admin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -28,6 +29,8 @@ gem 'cancancan'
 gem 'carrierwave'
 gem 'ransack'
 gem "fog"
+gem "rails_12factor", group: :production
+gem "thin"
 
 
 # Use ActiveModel has_secure_password
