@@ -12,12 +12,17 @@
 
 </div>
 
+<div class="lesson-bookings-header">
+  <strong>Bookings for your lessons:</strong>
+  Click the buttons to confirm the student's booking, then once the class is over, click again to mark them as attended.  Only then will they be able to write you a review!
+</div>
+<div class="instructor-view-bookings">
 <!-- if viewing an instructor page, show all the lessons they teach -->
 <% @lessons_as_instructor.each do |lesson| %>
   <table class="table table-striped">
-      <thead>
+      <thead><h4><em><%= link_to lesson.title, "/lessons/#{lesson.id}"  %> - <%= link_to "edit", "/lessons/#{lesson.id}/edit"  %></em></h4>
           <tr>
-              <th><%= link_to lesson.title, "/lessons/#{lesson.id}"  %> - <em><%= link_to "edit", "/lessons/#{lesson.id}/edit"  %></em></th>
+              <th></th>
               <th>Client Name</th>
               <th>Booking Status</th>
           </tr>
@@ -36,6 +41,7 @@
       <% end %>
   </table>
 <% end %>
+</div>
 
 <!-- if viewing your own user page, show all the classes you have booked -->
 <h4>You are booked for the following courses:</h4>

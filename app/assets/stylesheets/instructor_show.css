@@ -1,3 +1,8 @@
+*{
+  box-sizing: border-box;
+}
+
+
 
 .user-image img{
   border-radius: 100%;
@@ -5,5 +10,21 @@
 
 .instruct-header h2{
   margin-top: 50px;
-
 }
+
+.instructor-view-bookings  {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.instructor-view-bookings h4 a{
+  font-style: sans-serif;
+  color: red;
+}
+
+.lesson-bookings-header {
+  width: 600px;
+  margin: 0 auto;
+}
+
+
