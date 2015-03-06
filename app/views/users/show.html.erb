@@ -43,14 +43,37 @@
 <% end %>
 </div>
 
+
+
 <!-- if viewing your own user page, show all the classes you have booked -->
-<h4>You are booked for the following courses:</h4>
-<% if @bookings_as_client.empty? %>
-  <p>You have not yet booked any lessons!</p>
-<% else  %>
-  <% @bookings_as_client.each do |booking| %>
-    <p><%= link_to booking.lesson.title, "/lessons/#{booking.lesson.id}" %> Status: <%= booking.status %>
-    <% if booking.status == "attended" %><%= link_to "Wrtie a review", new_review_path %><% end %></p>
+<div class="lessons-booked-header">
+  <strong>You are booked in for the following courses:</strong>
+  Once the instructor approves you to attend, your status will change to "confirmed". Check back after attending the class and check for a link to write a review of the lesson!
+</div>
+
+<div class="view-lessons-booked">
+  <% if @bookings_as_client.empty? %>
+    <p>You have not yet booked any lessons!</p>
+  <% else  %>
+    <% @bookings_as_client.each_with_index do |booking, index| %>
+    <table class="table table-striped">
+        <thead><h4>
+            <tr>
+                <th></th>
+                <th>Lesson</th>
+                <th>Booking Status</th>
+            </tr>
+        </thead>
+
+          <tbody>
+              <tr>
+                <td><%= index+1 %></td>
+                <td><%= link_to booking.lesson.title, "/lessons/#{booking.lesson.id}" %><% if booking.status == "attended" %> <em><%= link_to "write review", new_review_path %></em><% end %></td>
+                <td><%= booking.status %></td>
+              </tr>
+          </tbody>
+    </table>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
