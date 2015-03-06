@@ -54,8 +54,9 @@
 <div class="view-lessons-booked">
   <% if @bookings_as_client.empty? %>
     <p>You have not yet booked any lessons!</p>
-  <% else  %>
-    <% @bookings_as_client.each_with_index do |booking, index| %>
+  <% end  %>
+  <% if @bookings_as_client.empty? == false %>
+    
     <table class="table table-striped">
         <thead><h4>
             <tr>
@@ -66,14 +67,16 @@
         </thead>
 
           <tbody>
+          <% @bookings_as_client.each_with_index do |booking, index| %>
               <tr>
                 <td><%= index+1 %></td>
-                <td><%= link_to booking.lesson.title, "/lessons/#{booking.lesson.id}" %><% if booking.status == "attended" %> <em><%= link_to "write review", new_review_path %></em><% end %></td>
+                <td><%= link_to booking.lesson.title, "/lessons/#{booking.lesson.id}" %><% if booking.status == "attended" %> - <em><%= link_to "write review", new_review_path %></em><% end %></td>
                 <td><%= booking.status %></td>
               </tr>
+          <% end %>
           </tbody>
     </table>
-    <% end %>
+    
   <% end %>
 </div>
 
