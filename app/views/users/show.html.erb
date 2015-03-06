@@ -20,7 +20,7 @@
 <!-- if viewing an instructor page, show all the lessons they teach -->
 <% @lessons_as_instructor.each do |lesson| %>
   <table class="table table-striped">
-      <thead><h4><em><%= link_to lesson.title, "/lessons/#{lesson.id}"  %> - <%= link_to "edit", "/lessons/#{lesson.id}/edit"  %></em></h4>
+      <thead><h4><em><%= link_to lesson.title, "/lessons/#{lesson.id}"  %><% if current_user == @user %><%= link_to " - edit", "/lessons/#{lesson.id}/edit"  %><% end %></em></h4>
           <tr>
               <th></th>
               <th>Client Name</th>
@@ -46,6 +46,7 @@
 
 
 <!-- if viewing your own user page, show all the classes you have booked -->
+<% if current_user && current_user == @user %>
 <div class="lessons-booked-header">
   <strong>You are booked in for the following courses:</strong>
   Once the instructor approves you to attend, your status will change to "confirmed". Check back after attending the class and check for a link to write a review of the lesson!
@@ -79,4 +80,5 @@
     
   <% end %>
 </div>
+<% end %>
 
