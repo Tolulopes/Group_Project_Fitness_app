@@ -10,7 +10,7 @@
 <h4>Categories</h4>
 <% if @categories.present? %>
   <% @categories.each do |category| %>
-        <%= category.title %>
+        <%= category.name %>
   <% end %>
 <% else %>
 <h5>There are no categories matching your search term.</h5>
