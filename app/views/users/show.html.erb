@@ -14,15 +14,28 @@
 
 <!-- if viewing an instructor page, show all the lessons they teach -->
 <% @lessons_as_instructor.each do |lesson| %>
-  <p><h4><%= link_to lesson.title, "/lessons/#{lesson.id}"  %></h4></p>
-  <p><h5><%= link_to "Edit lesson info", "/lessons/#{lesson.id}/edit"  %></h5></p>
-  <!-- if instructor logged in and viewing their own show page display bookings -->
-  <p><% if current_user && current_user == @user %>
-    <% lesson.bookings.each do |booking| %>
-      <%= booking.user.name %>, <button class="confirm-booking" data-id="<%= booking.id %>"><%= booking.status %></button>
-    <% end %>
-  <% end %>
-<% end %>    </p>
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th><%= link_to lesson.title, "/lessons/#{lesson.id}"  %> - <em><%= link_to "edit", "/lessons/#{lesson.id}/edit"  %></em></th>
+              <th>Client Name</th>
+              <th>Booking Status</th>
+          </tr>
+      </thead>
+      <!-- if instructor logged in and viewing their own show page display bookings -->
+      <% if current_user && current_user == @user %>
+        <tbody>
+          <% lesson.bookings.each_with_index do |booking, index| %>
+            <tr>
+              <td><%= index+1 %></td>
+              <td><%= booking.user.name %></td>
+              <td><button class="confirm-booking" data-id="<%= booking.id %>"><%= booking.status %></button></td>
+            </tr>
+          <% end %>
+        </tbody>
+      <% end %>
+  </table>
+<% end %>
 
 <!-- if viewing your own user page, show all the classes you have booked -->
 <h4>You are booked for the following courses:</h4>
