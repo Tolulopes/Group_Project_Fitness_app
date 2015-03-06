@@ -12,20 +12,26 @@
 
 </div>
 
+<% if @user.role == "instructor" && current_user == @user %>
 <div class="lesson-bookings-header">
   <strong>Bookings for your lessons:</strong>
   Click the buttons to confirm the student's booking, then once the class is over, click again to mark them as attended.  Only then will they be able to write you a review!
 </div>
+<% end %>
+
+
 <div class="instructor-view-bookings">
 <!-- if viewing an instructor page, show all the lessons they teach -->
 <% @lessons_as_instructor.each do |lesson| %>
   <table class="table table-striped">
       <thead><h4><em><%= link_to lesson.title, "/lessons/#{lesson.id}"  %><% if current_user == @user %><%= link_to " - edit", "/lessons/#{lesson.id}/edit"  %><% end %></em></h4>
+          <% if current_user && current_user == @user %>      
           <tr>
               <th></th>
               <th>Client Name</th>
               <th>Booking Status</th>
           </tr>
+          <% end %>
       </thead>
       <!-- if instructor logged in and viewing their own show page display bookings -->
       <% if current_user && current_user == @user %>
