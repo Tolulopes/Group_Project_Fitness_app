@@ -2,7 +2,7 @@
 <h4>Lessons</h4>
 <% if @lessons.present? %>
   <% @lessons.each do |lesson| %>
-        <%= lesson.title %>
+        <%= link_to lesson.title, "lessons/#{lesson.id}" %>
   <% end %>
 <% else %>
 <h5>There are no lessons matching your search term.</h5>
@@ -11,7 +11,7 @@
 <h4>Categories</h4>
 <% if @categories.present? %>
   <% @categories.each do |category| %>
-        <%= category.name %>
+        <%= link_to category.name, "categories/#{category.id}" %>
   <% end %>
 <% else %>
 <h5>There are no categories matching your search term.</h5>
@@ -21,7 +21,7 @@
 <% if @users.present? %>
   <% @users.each do |user| %>
     <% if user.role == "instructor" %>
-        <%= user.name %>
+        <%= link_to user.name, "users/#{user.id}" %>
     <% else %>
     <h5>There are no instructors matching your search term.</h5>
     <% end %>
